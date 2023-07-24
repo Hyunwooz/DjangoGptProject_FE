@@ -1,0 +1,46 @@
+.header {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+.header h1 a img {
+    width: 150px;
+}
+
+.navbar__menu {
+    display: block;
+    padding: 0;
+    list-style: none;
+}
+
+.navbar__menu li {
+    text-align: center;
+    width: 100%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.navbar__menu li a {
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.navbar__toggle {
+    position: absolute;
+    top: 22px;
+    right: 5px;
+    border: none;
+    background: none;
+}
+
+.navbar__toggle {
+    font-size: 30px;
+}
+
+.hidden_menu {
+    display: none;
+}
+
+video {
+    width: 90%;
+}

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>AgAs - Service</title>
+        <link rel="shortcut icon" href="../../favicon.ico" type="image/x-icon">
+        <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"
+        />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Braah+One&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="/src/assets/css/reset.css" />
+        <link rel="stylesheet" href="/src/assets/css/main.css" />
+        <link rel="stylesheet" href="/src/assets/css/header.css" />
+    </head>
+    <body>
+        <!-- header -->
+        <header>
+            <nav class="header">
+                <h1>
+                    <a href="/index.html">
+                        <img src="/src/assets/img/logo.svg" alt="">
+                    </a>
+                </h1>
+                <ul class="navbar__menu">
+                    <li>
+                        <a href="question.html">TRY IT</a>
+                    </li>
+                    <li>
+                        <a href="login.html">LOGIN</a>
+                    </li>
+                    <li>
+                        <a href="#">LOGOUT</a>
+                    </li>
+                    <li>
+                        <a href="join.html">JOIN</a>
+                    </li>
+                    <li>
+                        <a href="ad_type.htmlt">AD TYPE</a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/Hyunwooz/OrmiProject">LOUNGE</a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/Hyunwooz/OrmiProject">PROFILE</a>
+                    </li>
+                </ul>
+                <button class="navbar__toggle" type="button">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </nav>
+        </header>
+        <!-- // header -->
+        <!-- main --> 
+        <main>
+            <section>
+                <div>
+                    <h2>
+                        <p>아래의 정보를 토대로</p>
+                        <p>광고를 생성합니다.</p>
+                    </h2>
+                    <div class="showSetting"></div>
+                    <div>
+                        <button id="connect"type="submit">생성 하기!</button>
+                        <a id="disconnect" >아니요, 정보가 맞지 않습니다.</a>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <div></div>
+            </section>
+            <div class="hidden" id="loading">
+                <p>입력하신 정보를 토대로 광고를 생성 중입니다.</p>
+                <p>잠시만 기다려주세요 :)</p>
+                <div class="spinner"></div>
+            </div>
+            <form class="hidden" id="addQuestion" action="post">
+                <div class="relative mt-3">
+                    <input
+                        type="text"
+                        class="input_question"
+                        name="addContents"
+                        placeholder="추가할 내용을 AgAs한테 알려주세요!"
+                    ></input>
+                    <button type="submit"><i class="fa-solid fa-paper-plane"></i></button>
+                </div>
+            </form>
+        </main>
+        <!-- // main -->
+        <!-- footer -->
+        <footer>
+            <div>
+                <div>
+                    <strong>Automatically</strong>
+                    <p>generate advertising scripts</p>
+                    <p>using <strong>ChatGPT</strong></p>
+                </div>
+                <div >
+                    <strong>ChatGPT연동 프로젝트 입니다 :)</strong>
+                    <p>
+                        Copyright 2023. Chilli All rights reserved.
+                    </p>
+                </div>
+            </div>
+        </footer>
+        <!-- // footer -->
+        <script src="../assets/js/menu.js"></script>
+        <script src="../assets/js/display.js" type="module"></script>
+        <script src="../assets/js/connect.js" type="module"></script>
+        <script src="../assets/js/openAPI.js" defer type="module"></script>
+    </body>
+</html>
