@@ -18,6 +18,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Braah+One&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="/src/assets/css/reset.css" />
         <link rel="stylesheet" href="/src/assets/css/style.css" />
+        <link rel="stylesheet" href="/src/assets/css/question.css" />
     </head>
     <body class="bg-gray-100">
         <!-- header -->
@@ -41,9 +42,9 @@
                     <li>
                         <a href="join.html">JOIN</a>
                     </li>
-                    <li>
-                        <a href="ad_type.html">AD TYPE</a>
-                    </li>
+                    <!-- <li>
+                        <a href="#">AD TYPE</a>
+                    </li> -->
                     <li>
                         <a href="https://github.com/Hyunwooz/OrmiProject">LOUNGE</a>
                     </li>
@@ -51,47 +52,49 @@
                         <a href="https://github.com/Hyunwooz/OrmiProject">PROFILE</a>
                     </li>
                 </ul>
-                <button class="navbar__toggle" type="button">
-                    <i class="fa-solid fa-bars"></i>
-                </button>
             </nav>
         </header>
         <!-- // header -->
         <!-- main -->
         <main>
-            <form method="post">
-                <section id="question__1">
-                    <h2>Question 1. 광고의 목표가 무엇인가요?</h2>
+            <div class="q_count">
+                <p class="q_count_changing">1 </p>
+                <p>/</p>
+                <p>5</p>
+            </div>
+            <form class="question_form" method="post">
+                <section id="question1">
+                    <h2>광고의 목표가 무엇인가요?</h2>
                     <div>
                         <fieldset class="campaignGoal">
-                            <div >목표 선택하기</div>
-                            <div>
-                                <div>
+                            <div class="subtitle">목표 선택하기</div>
+                            <div class="q_select_wrap">
+                                <div class="q_select">
                                     <label for="판매" >
                                         <div>
-                                            <p>판매</p>
-                                            <i></i>
-                                            <p>온라인, 앱, 전화, 매장을 통한 판매를 촉진합니다.</p>
+                                            <p class="q_select_title">판매</p>
+                                            <i class="fa-solid fa-gift"></i>
+                                            <p class="q_select_disc">온라인, 앱, 전화, 매장을 통한 판매를 촉진합니다.</p>
                                         </div>
                                     </label>
                                     <input required type="radio" id="판매" name="campaignGoal" value="판매">
                                 </div>
-                                <div>
+                                <div class="q_select">
                                     <label for="잠재_고객_유치" >
                                         <div>
-                                            <p>잠재 고객 유치</p>
+                                            <p class="q_select_title">잠재 고객 유치</p>
                                             <i class="fa-solid fa-users"></i>
-                                            <p>고객의 액션을 유도하여 리드 및 다른 전환를 늘립니다.</p>
+                                            <p class="q_select_disc">고객의 액션을 유도하여 리드 및 다른 전환를 늘립니다.</p>
                                         </div>
                                     </label>
                                     <input type="radio" id="잠재_고객_유치" name="campaignGoal" value="잠재_고객_유치">
                                 </div>
-                                <div>
+                                <div class="q_select">
                                     <label for="웹사이트_트래픽" >
                                         <div>
-                                            <p >웹사이트 트래픽</p>
+                                            <p class="q_select_title">웹사이트 트래픽</p>
                                             <i class="fa-solid fa-chart-column"></i>
-                                            <p>관련성이 높은 사용자가 웹사이트를 방문하도록 유도합니다.</p>
+                                            <p class="q_select_disc">관련성이 높은 사용자가 웹사이트를 방문하도록 유도합니다.</p>
                                         </div>
                                     </label>
                                     <input type="radio" id="웹사이트_트래픽" name="campaignGoal" value="웹사이트_트래픽">
@@ -100,40 +103,40 @@
                         </fieldset>
                     </div>
                 </section>
-                <section id ="question__2">
-                    <h2>Question 2. 광고의 유형은 무엇인가요?</h2>
+                <section id ="question2" class="hidden">
+                    <h2>광고의 유형은 무엇인가요?</h2>
                     <div>
                         <fieldset class="campaignType" required>
-                            <div>
+                            <div class="subtitle">
                                 <p>유형 선택하기</p>
                             </div>
-                            <div>
-                                <div>
+                            <div class="q_select_wrap">
+                                <div class="q_select">
                                     <label for="검색" >
                                         <div>
-                                            <p>검색</p>
+                                            <p class="q_select_title">검색</p>
                                             <i class="fa-solid fa-magnifying-glass"></i>
-                                            <p>검색에서 구매 의도가 높은 고객에게 노출합니다.</p>
+                                            <p class="q_select_disc">검색에서 구매 의도가 높은 고객에게 노출합니다.</p>
                                         </div>
                                     </label>
                                     <input required type="radio" id="검색" name="campaignType" value="검색">
                                 </div>
-                                <div>
+                                <div class="q_select">
                                     <label for="디스플레이" >
                                         <div>
-                                            <p>디스플레이</p>
+                                            <p class="q_select_title">디스플레이</p>
                                             <i class="fa-solid fa-display"></i>
-                                            <p>눈에 잘 띄는 광고 소재로 사이트와 앱을 통해 고객에게 도달합니다.</p>
+                                            <p class="q_select_disc">눈에 잘 띄는 광고 소재로 사이트와 앱을 통해 고객에게 도달합니다.</p>
                                         </div>
                                     </label>
                                     <input type="radio" id="디스플레이" name="campaignType" value="디스플레이">
                                 </div>
-                                <div>
+                                <div class="q_select">
                                     <label for="동영상" >
                                         <div >
-                                            <p>동영상</p>
+                                            <p class="q_select_title">동영상</p>
                                             <i class="fa-brands fa-youtube"></i>
-                                            <p>Youtube 시청자에게 도달하여 전환을 늘립니다.</p>
+                                            <p class="q_select_disc">Youtube 시청자에게 도달하여 전환을 늘립니다.</p>
                                         </div>
                                     </label>
                                     <input type="radio" id="동영상" name="campaignType" value="동영상">
@@ -142,79 +145,81 @@
                         </fieldset>
                     </div>
                 </section>
-                <section id="question__3">
-                    <h2>Question 3. 광고의 카테고리가 무엇인가요?</h2>
+                <section id="question3" class="hidden">
+                    <h2>광고의 카테고리가 무엇인가요?</h2>
                     <div>
                         <fieldset class="campaignCategory" aria-required="true">
-                            <div >카테고리 선택하기</div>
+                            <div class="subtitle">카테고리 선택하기</div>
                             <div class="campaignCategoryValue"></div>
                         </fieldset>
                     </div>
                 </section>
-                <section id="question__4">
-                    <h2>Question 4. 세부 키워드(단어)를 입력해주세요.</h2>
+                <section id="question4" class="hidden">
+                    <h2>세부 키워드(단어)를 입력해주세요.</h2>
                     <div>
-                        <fieldset aria-required="true">
-                            <div>키워드 입력</div>
-                            <div>
-                                <div>
-                                    <textarea
+                        <fieldset class="campaignKeyword" aria-required="true">
+                            <div class="subtitle">키워드 입력</div>
+                                <div class="keyword_input_wrap">
+                                    <input
                                         type="text"
-                                        class="campaignKeyword"
+                                        class="keyword_input"
                                         rows="1"
                                         name="keyword"
                                         required
-                                        placeholder="ex) 제주 자전거 여행"></textarea>
+                                        placeholder="ex) 제주 자전거 여행"></input>
                                 </div>
-                            </div>
                         </fieldset>
                     </div>
                 </section>
-                <section id="question__5">
-                    <h2>Question 5. 광고 타겟팅 설정하기</h2>
-                    <div>
-                        <div>타겟팅 설정하기</div>
-                        <div>
+                <section id="question5" class="hidden">
+                    <h2>광고 타겟팅 설정하기</h2>
+                    <fieldset>
+                        <div class="subtitle">타겟팅 설정하기</div>
+                        <div class="taget_Wrap">
                             <div>
-                                <div>성별</div>
-                                <fieldset>
-                                    <div>
-                                        <select class="targetGender" name="성별" id="성별">
-                                            <option value="" selected disabled hidden>선택</option>
-                                        </select>
-                                    </div>
-                                </fieldset>
+                                <p class="target_title">성별</p>
+                                <div>
+                                    <select class="targetGender" name="성별" id="성별">
+                                        <option value="" selected disabled hidden>선택</option>
+                                    </select>
+                                </div>
                             </div>
                             <div>
-                                <div>나이</div>
-                                <fieldset>
-                                    <div>
-                                        <select class="targetAge" name="연령대" id="연령대">
-                                            <option value="" selected disabled hidden>선택</option>
-                                        </select>
-                                    </div>
-                                </fieldset>
+                                <p class="target_title">나이</p>
+                                <div>
+                                    <select class="targetAge" name="연령대" id="연령대">
+                                        <option value="" selected disabled hidden>선택</option>
+                                    </select>
+                                </div>
+
                             </div>
                         </div>
-                    </div>
+                    </fieldset>
+                    
                 </section>
-                <section id="question__6">
-                    <div>
-                        <button class="nextStep">다음</button>
-                    </div>
-                </section>
+                <div class="q_move_btn_wrap">
+                    <button class="question_prev hidden">
+                        이전</i>
+                    </button>
+                    <button class="question_next">
+                        다음
+                    </button>
+                </div>
+                <div class="nextStep_div">
+                    <button class="nextStep hidden">제출</button>
+                </div>
             </form>
         </main>
         <!-- // main -->
         <!-- footer -->
         <footer>
-            <div>
-                <div>
+            <div class="footer_wrap">
+                <div class="footer_slogun">
                     <strong>Automatically</strong>
                     <p>generate advertising scripts</p>
                     <p>using <strong>ChatGPT</strong></p>
                 </div>
-                <div >
+                <div class="footer_author">
                     <strong>ChatGPT연동 프로젝트 입니다 :)</strong>
                     <p>
                         Copyright 2023. Chilli All rights reserved.
@@ -223,8 +228,7 @@
             </div>
         </footer>
         <!-- // footer -->
-        <script src="../assets/js/menu.js"></script>
-        <script src="../assets/js/question.js" type="module"></script>
-        <script src="../assets/js/slide.js"></script>
+        <script src="/src/assets/js/question.js" type="module"></script>
+        <script src="/src/assets/js/slide.js"></script>
     </body>
 </html>

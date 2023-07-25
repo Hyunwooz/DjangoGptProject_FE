@@ -1,0 +1,63 @@
+footer {
+    background-color: rgb(138, 241, 255);
+}
+
+.footer_wrap {
+    display: flex;
+    height: 120px;
+    border-top: 1px solid black;
+    padding: 15px;
+}
+
+.footer_slogun {
+    font-size: 24px;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    border-right: 1px solid black;
+    padding-right: 15px;
+}
+
+.footer_slogun strong {
+    font-size: 30px;
+}
+
+.footer_slogun p {
+    margin-top: 5px;
+}
+
+.footer_author {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding-left: 60px;
+    font-size: 16px;
+}
+
+.footer_author strong {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 40px;
+}
+
+/* <!-- footer -->
+        <footer>
+            <div class="footer_wrap">
+                <div class="footer_slogun">
+                    <strong>Automatically</strong>
+                    <p>generate advertising scripts</p>
+                    <p>using <strong>ChatGPT</strong></p>
+                </div>
+                <div class="footer_author">
+                    <strong>ChatGPT연동 프로젝트 입니다 :)</strong>
+                    <p>
+                        Copyright 2023. Chilli All rights reserved.
+                    </p>
+                </div>
+            </div>
+        </footer>
+        <!-- // footer --> */

@@ -1,3 +1,50 @@
 main {
+    padding-left: 70px;
+    padding-right: 70px;
+}
+
+section {
     min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 60px;
+    font-weight: bold;
+    text-align: center;
+}
+
+section p {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#section1 {
+    padding-top: 60px;
+}
+
+#section1 h2 {
+    margin-bottom: 60px;
+}
+
+#section1 img {
+    width: 800px;
+}
+
+#section2 h2 {
+    margin-bottom: 80px;
+}
+
+.section2_text {
+    font-size: 50px;
+}
+
+#section3 a {
+    margin-top: 80px;
+    text-decoration: none;
+    background-color: black;
+    color: white;
+    padding: 25px;
+    border-radius: 5px;
+    font-size: 30px;
 }

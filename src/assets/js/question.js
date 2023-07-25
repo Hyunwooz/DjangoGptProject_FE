@@ -1,5 +1,5 @@
 import { ages, categories, genders } from "./data.js";
-import { debouncing } from "./util.js";
+// import { debouncing } from "./util.js";
 
 const $campaignGoal = document.querySelector(".campaignGoal");
 const $campaignType = document.querySelector(".campaignType");
@@ -10,32 +10,6 @@ const $gender = document.querySelector(".targetGender");
 const $form = document.querySelector("form");
 const $campaignCategoryDiv = document.querySelector('.campaignCategoryValue')
 
-// 질문의 진행률을 보여주는 함수
-const quetsionProgress = (data) => {
-    const progress = document.querySelector('.progress_bar')
-    const old_Progress = "w-"+(data - 1).toString()+"/5"
-    const curr_Progress = "w-"+data.toString()+"/5"
-
-    progress.classList.remove("hidden")
-    progress.classList.remove(old_Progress)
-    progress.classList.add(curr_Progress)
-}
-
-// 다음 질문을 그려주는 함수
-const nextQuestion = (event) => {
-    let curr = event.target;
-
-    while (curr.tagName != "SECTION") {
-        curr = curr.parentNode;
-    }
-    
-    const parent = curr.id.split("__");
-    const nextID = "#question__" + (parseInt(parent[1]) + 1).toString();
-    const next = document.querySelector(nextID);
-
-    quetsionProgress(parseInt(parent[1]))
-    next.classList.remove("hidden");
-};
 
 // category에 들어갈 label과 input의 attribute를 세팅 해주는 함수
 const addCategory = (data) => {
@@ -45,7 +19,6 @@ const addCategory = (data) => {
 
     // label Attribute Setting
     label.innerText = data
-    label.classList = 'mr-2'
     label.setAttribute('for',data)
 
     // input Attribute Setting
@@ -86,21 +59,6 @@ ages.forEach((data) => {
     const option = addOption(data)
     $age.append(option)
 });
-
-[...$campaignGoal.querySelectorAll("input")].forEach((btn) => {
-    btn.addEventListener("click", nextQuestion);
-});
-
-[...$campaignType.querySelectorAll("input")].forEach((btn) => {
-    btn.addEventListener("click", nextQuestion);
-});
-
-[...$category.querySelectorAll("input")].forEach((btn) => {
-    btn.addEventListener("click", nextQuestion);
-});
-
-$keyword.addEventListener("input", debouncing(nextQuestion,350));
-$age.addEventListener("change", nextQuestion);
 
 // Next 버튼 클릭시
 $form.addEventListener("submit", (e) => {
@@ -149,8 +107,8 @@ $form.addEventListener("submit", (e) => {
     });
 
     // 로컬스토리지(DB에 저장)
-    localStorage.setItem("gptSetting", JSON.stringify(gptSetting));
+    alert(gptSetting)
 
     // 다음 페이지 Render
-    location.href = "service.html";
+    // location.href = "service.html";
 });

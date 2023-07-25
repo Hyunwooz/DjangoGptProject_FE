@@ -1,0 +1,49 @@
+
+.user-join {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 4.5rem;
+	padding-top: 4rem;
+	padding-bottom: 3rem;
+	width: 30rem;
+}
+
+.user-join h2 {
+	font-size: 4.5rem;
+	font-weight: bold;
+	margin-bottom: 3.8rem;
+	color:  rgb(102, 162, 253);;
+}
+
+.join_input_wrap {
+	margin-bottom: 2rem;
+}
+
+.user-join input{
+	width: 25rem;
+	height: 3rem;
+	border: none;
+	padding: 0.5rem 1.8rem 0.5rem 1.8rem;
+	margin-top: 1rem;
+	border-radius: 5px;
+	font-size: 16px;
+}
+
+.user-join input:not(.join_btn){
+	background-color: rgb(230, 230, 230);
+
+}
+
+.join_btn {
+	font-weight: bold;
+	background: rgb(102, 162, 253);
+	color: white;
+}
+
+.errorlist {
+	font-weight: bold;
+}

@@ -5,17 +5,21 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>로그인</title>
+        <link rel="stylesheet" href="/src/assets/css/reset.css">
+        <link rel="stylesheet" href="/src/assets/css/login.css">
     </head>
     <body>
         <main>
     		<form class="user-login" method="post">
                 <h2>LOGIN</h2>
-                <input type="text">
-                <input type="password">
+                <div class="login_input_wrap">
+                    <input type="email" placeholder="이메일을 적어주세요.">
+                    <input type="password" placeholder="비밀번호를 적어주세요.">
+                </div>
                 <input class="login_btn" type="submit" value="로그인">
-                <a href="#">회원가입 바로가기</a>
+                <input class="github_btn" type="submit" value="Github 로그인">
+                <a href="/src/view/join.html">회원가입 바로가기</a>
             </form>
         </main>
     </body>
-    <script src="{% static 'user/js/login.js' %}"></script>
 </html>
