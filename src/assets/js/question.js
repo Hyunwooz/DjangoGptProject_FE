@@ -4,7 +4,7 @@ import { ages, categories, genders } from "./data.js";
 const $campaignGoal = document.querySelector(".campaignGoal");
 const $campaignType = document.querySelector(".campaignType");
 const $category = document.querySelector(".campaignCategory");
-const $keyword = document.querySelector(".campaignKeyword");
+const $keyword = document.querySelector(".keyword_input");
 const $age = document.querySelector(".targetAge");
 const $gender = document.querySelector(".targetGender");
 const $form = document.querySelector("form");
@@ -93,6 +93,7 @@ $form.addEventListener("submit", (e) => {
 
     // 각 질문에 대한 벨류값 가져오기
     const newKeyword = $keyword.value;
+    console.log($keyword.vlaue);
     const newAge = $age.value;
     const newGender = $gender.value;
 
@@ -107,8 +108,8 @@ $form.addEventListener("submit", (e) => {
     });
 
     // 로컬스토리지(DB에 저장)
-    alert(gptSetting)
+    localStorage.setItem("gptSetting", JSON.stringify(gptSetting));
 
     // 다음 페이지 Render
-    // location.href = "service.html";
+    location.href = "service.html";
 });

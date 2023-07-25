@@ -21,6 +21,10 @@
 
 .join_input_wrap {
 	margin-bottom: 2rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 }
 
 .user-join input{

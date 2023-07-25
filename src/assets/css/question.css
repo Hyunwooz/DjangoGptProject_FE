@@ -186,6 +186,7 @@ section {
     margin-bottom: 10px;
     justify-content: center;
     align-items: center;
+    min-width: 1090px;
 }
 
 .nextStep {
@@ -205,7 +206,7 @@ section {
     justify-content: center;
     align-items: center;
     gap: 40px;
-    min-width: 1000px;
+    min-width: 1090px;
 }
 
 .q_move_btn_wrap > button {

@@ -4,8 +4,8 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>AgAs - Home</title>
-        <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+        <title>AgAs - Service</title>
+        <link rel="shortcut icon" href="../../favicon.ico" type="image/x-icon">
         <link
         rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -18,71 +18,65 @@
         <link href="https://fonts.googleapis.com/css2?family=Braah+One&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="/src/assets/css/reset.css" />
         <link rel="stylesheet" href="/src/assets/css/style.css" />
-        <link rel="stylesheet" href="/src/assets/css/main.css" />
-
+        <link rel="stylesheet" href="/src/assets/css/profile.css" />
     </head>
     <body>
         <!-- header -->
         <header>
             <nav class="header">
                 <h1>
-                    <a href="index.html">
-                        <img src="/src/assets/img/logo.svg" alt="AgAs">
+                    <a href="/index.html">
+                        <img src="/src/assets/img/logo.svg" alt="">
                     </a>
                 </h1>
                 <ul class="navbar__menu">
                     <li>
-                        <a href="src/view/question.html">TRY IT</a>
+                        <a href="question.html">TRY IT</a>
                     </li>
                     <li>
-                        <a href="src/view/login.html">LOGIN</a>
+                        <a href="login.html">LOGIN</a>
                     </li>
                     <li>
                         <a href="#">LOGOUT</a>
                     </li>
                     <li>
-                        <a href="src/view/join.html">JOIN</a>
+                        <a href="join.html">JOIN</a>
                     </li>
                     <!-- <li>
-                        <a href="src/view/ad_type.html">AD TYPE</a>
+                        <a href="ad_type.htmlt">AD TYPE</a>
                     </li> -->
                     <li>
-                        <a href="/src/view/lounge.html">LOUNGE</a>
+                        <a href="lounge.html">LOUNGE</a>
                     </li>
                     <li>
-                        <a href="/src/view/profile.html">PROFILE</a>
+                        <a href="profile.html">PROFILE</a>
                     </li>
                 </ul>
             </nav>
         </header>
         <!-- // header -->
-        <!-- main -->
+        <!-- main --> 
         <main>
-            <section id="section1">
-                <h2>
-                    <p>Generate Ad Scripts</p>
-                    <p >Automatically!</p>
-                </h2>
-                <img src="/src/assets/img/main.gif" alt="메인기능">
-            </section>
-            <section id="section2">
-                <h2>
-                    <p>Work Productivity Is</p>
-                    <p >Different.</p>
-                </h2>
-                <div class="section2_text">
-                    <p>혁신적인 AI 서비스인 <strong>AgAs</strong>를 통해</p>
-                    <p>시간과 노력을 <strong >아끼며</strong></p>
-                    <p">더욱 멋진 광고를 선보이세요.</p>
-                </div>
-            </section>
-            <section id="section3">
-                <p>위처럼 근사한 경험을</p>
-                <p><strong>AgAs</strong>와 함께</p>
-                <p>해보실래요? :)</p>
-                <a href="src/view/question.html">
-                    Try Now!
-                </a>
+            <section>
+                <form class="user-profile-form" action="{% url 'user:pf-edit' %}" enctype="multipart/form-data" method="post">
+                    <h2>Profile</h2>
+                    <h3>My Avatar</h3>
+                        <img src="/src/assets/img/sample.png" alt="" class="user-avatar" />
+                    <div class="avatar_div">
+                        <label for="profile-avatar">이미지 변경하기</label>
+                        <input type="file" id="profile-avatar" name="avatarUrl" value="">
+                    </div>
+                    <div class="name_div">
+                        <label for="profile-name">닉네임</label>
+                        <input type="text" id="profile-name" name="nickname" value="닉네임">
+                    </div>
+                    <div class="aboutMe_div">
+                        <label for="profile-aboutMe">자기소개</label>
+                        <textarea id="profile-aboutMe"  name="aboutMe" type="text" rows="20">자기소개 입니다.</textarea>
+                    </div>
+                    <input class="pf-save_btn" type="submit" value="저장">
+                    <a class="change-pw_btn" href="#">비밀번호 변경 하러가기</a>
+                </form>
             </section>
         </main>
         <!-- // main -->
@@ -103,6 +97,5 @@
             </div>
         </footer>
         <!-- // footer -->
-        <script src="/src/assets/js/sectionScroll.js" type="module"></script>
     </body>
 </html>

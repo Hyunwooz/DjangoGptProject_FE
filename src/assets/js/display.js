@@ -1,4 +1,4 @@
-import { createSearch_AD, createDisplay_AD, createVideo_AD } from "./answer.js";
+// import { createSearch_AD, createDisplay_AD, createVideo_AD } from "./answer.js";
 
 const $chatBox = document.querySelector(".answerSection");
 
@@ -25,9 +25,6 @@ function createDiv(value, text) {
     const div = document.createElement("div");
     const input = document.createElement("input");
     const label = document.createElement("label");
-    div.classList = "flex flex-col px-6 mb-2";
-    label.classList = "text-xs font-bold mb-1";
-    input.classList = "border border-slate-300 rounded px-3 py-1 bg-gray-100";
 
     input.value = value.replace(/_/g, " ");
     input.readOnly = true;
@@ -38,30 +35,30 @@ function createDiv(value, text) {
 }
 
 // 화면에 광고 유형별 답변을 그려주는 함수
-export const printAnswer = async (answer) => {
-    const gpt_answer = JSON.parse(answer);
-    if (gpt_answer.ad_type == "디스플레이") {
-        const ad = createDisplay_AD(gpt_answer);
+// export const printAnswer = async (answer) => {
+//     const gpt_answer = JSON.parse(answer);
+//     if (gpt_answer.ad_type == "디스플레이") {
+//         const ad = createDisplay_AD(gpt_answer);
 
-        $chatBox.appendChild(ad);
-    } else if (gpt_answer.ad_type == "검색") {
-        const ad = createSearch_AD(gpt_answer);
+//         $chatBox.appendChild(ad);
+//     } else if (gpt_answer.ad_type == "검색") {
+//         const ad = createSearch_AD(gpt_answer);
 
-        $chatBox.appendChild(ad);
-    } else if (gpt_answer.ad_type == "동영상") {
-        const ad = createVideo_AD(gpt_answer);
+//         $chatBox.appendChild(ad);
+//     } else if (gpt_answer.ad_type == "동영상") {
+//         const ad = createVideo_AD(gpt_answer);
 
-        $chatBox.appendChild(ad);
-    }
-};
+//         $chatBox.appendChild(ad);
+//     }
+// };
 
-// 화면에 질문 그려주는 함수
-export const printQuestion = async (data) => {
-    if (data) {
-        let textarea = document.createElement("p");
-        textarea.classList =
-            "answer border border-slate-300 rounded-xl w-full h-full py-3 px-3 my-3 resize-none";
-        textarea.innerText = data;
-        $chatBox.appendChild(textarea);
-    }
-};
+// // 화면에 질문 그려주는 함수
+// export const printQuestion = async (data) => {
+//     if (data) {
+//         let textarea = document.createElement("p");
+//         textarea.classList =
+//             "answer border border-slate-300 rounded-xl w-full h-full py-3 px-3 my-3 resize-none";
+//         textarea.innerText = data;
+//         $chatBox.appendChild(textarea);
+//     }
+// };
