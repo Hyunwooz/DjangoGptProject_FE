@@ -18,13 +18,19 @@ const api_login = async (event) => {
         headers: {},
         body: formData,
     })
-    .then((res) => {
-        console.log(res)
+    .then((res) => res.json())
+    .then((data) => {
+        
+        if (data.non_field_errors) {
+            console.log(data.non_field_errors[0])
+        } else {
+            console.log(data)
+        }
+        
     })
     .catch((err) => {
         console.log(err);
     });
-
 }
 
 $login_btn.addEventListener('click',api_login)
