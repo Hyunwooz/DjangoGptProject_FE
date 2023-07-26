@@ -37,4 +37,13 @@ const api_join = async (event) => {
     });
 }
 
+const is_logined = () => {
+
+    if (sessionStorage.getItem('user')) {
+        location.href = '/index.html'
+    }
+}
+
+is_logined()
+
 $join_btn.addEventListener('click',api_join)

@@ -1,3 +1,5 @@
+import {setCookie} from "./util.js"
+
 const $login_btn = document.querySelector('.login_btn')
 
 const api_login = async (event) => {
@@ -24,9 +26,12 @@ const api_login = async (event) => {
         if (data.non_field_errors) {
             console.log(data.non_field_errors[0])
         } else {
-            console.log(data)
+            console.log('Seuccess Login')
+            setCookie('access',data.token.access)
+            setCookie('refresh',data.token.refresh)
+            sessionStorage.setItem('user', data.user);
+            location.href('index.html')
         }
-        
     })
     .catch((err) => {
         console.log(err);

@@ -31,3 +31,16 @@ export const throttling = (func, delay) => {
         }, delay);
     };
 };
+
+
+/**
+ * @param {string} cookie_name 저장될 쿠키 이름
+ * @param {string} value 저장될 value
+ */
+export const setCookie = (cookie_name, value) => {
+    let exdate = new Date();
+    exdate.setDate(exdate.getMinutes() + 30);
+    // 설정 일수만큼 현재시간에 만료값으로 지정
+    const cookie_value = value + '; expires=' + exdate.toUTCString();
+    document.cookie = cookie_name + '=' + cookie_value;
+}
