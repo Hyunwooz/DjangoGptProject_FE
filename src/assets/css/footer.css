@@ -1,11 +1,11 @@
 footer {
-    background-color: rgb(138, 241, 255);
+    background-color: rgb(174, 206, 255);
+    color: rgba(0, 0, 0, 0.384);
 }
 
 .footer_wrap {
     display: flex;
     height: 120px;
-    border-top: 1px solid black;
     padding: 15px;
 }
 
@@ -16,12 +16,13 @@ footer {
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    border-right: 1px solid black;
+    border-right: 1px solid rgb(255, 255, 255);
     padding-right: 15px;
 }
 
 .footer_slogun strong {
     font-size: 30px;
+    color: rgb(56, 135, 253);
 }
 
 .footer_slogun p {
@@ -43,21 +44,3 @@ footer {
     font-weight: bold;
     margin-bottom: 40px;
 }
-
-/* <!-- footer -->
-        <footer>
-            <div class="footer_wrap">
-                <div class="footer_slogun">
-                    <strong>Automatically</strong>
-                    <p>generate advertising scripts</p>
-                    <p>using <strong>ChatGPT</strong></p>
-                </div>
-                <div class="footer_author">
-                    <strong>ChatGPT연동 프로젝트 입니다 :)</strong>
-                    <p>
-                        Copyright 2023. Chilli All rights reserved.
-                    </p>
-                </div>
-            </div>
-        </footer>
-        <!-- // footer --> */
