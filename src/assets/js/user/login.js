@@ -39,5 +39,12 @@ const api_login = async (event) => {
 const home_link = () => {
     location.href= '/index.html'
 }
+const is_logined = () => {
 
+    if (sessionStorage.getItem('user')) {
+        location.href = '/index.html'
+    }
+}
+
+is_logined()
 $login_btn.addEventListener('click',api_login)
