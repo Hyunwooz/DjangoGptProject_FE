@@ -8,7 +8,7 @@
 }
 
 .header h1 {
-    padding-left: 30px;
+    padding-left: 180px;
 }
 
 .header h1 a img {
@@ -17,36 +17,44 @@
 
 .navbar__menu {
     display: flex;
+    justify-content: flex-end;
+    align-items: center;
     width: 350px;
     list-style: none;
-    padding-right: 30px;
+    padding-right: 180px;
+}
+
+.navbar__menu li {
+    justify-content: center;
+    align-items: center;
+    width: 90px;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
 .navbar__menu li:not(.always_show) {
     display: none;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    margin-top: 5px;
-    margin-bottom: 5px;
 }
 
 .always_show {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    margin-top: 5px;
-    margin-bottom: 5px;
 }
 
 .navbar__menu li a {
     text-decoration: none;
     font-weight: bold;
+    color: black;
 }
 
 .navbar__toggle {
     font-size: 30px;
+}
+
+.avatar_img {
+    width: 42px;
+    height: 42px;
+    object-fit: cover;
+    border-radius: 50%;
 }
 
 video {

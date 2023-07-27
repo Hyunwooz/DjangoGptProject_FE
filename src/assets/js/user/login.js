@@ -7,7 +7,7 @@ const api_login = async (event) => {
     
     const email = document.querySelector('.user-login__email').value
     const password = document.querySelector('.user-login__password').value
-    
+
     const formData = new FormData();
 
     formData.append('email', email);
@@ -22,20 +22,22 @@ const api_login = async (event) => {
     })
     .then((res) => res.json())
     .then((data) => {
-        
         if (data.non_field_errors) {
             console.log(data.non_field_errors[0])
         } else {
-            console.log('Seuccess Login')
             setCookie('access',data.token.access)
             setCookie('refresh',data.token.refresh)
-            sessionStorage.setItem('user', data.user);
-            location.href= '/index.html'
+            sessionStorage.setItem('user', JSON.stringify(data.user));
+            home_link()
         }
     })
     .catch((err) => {
         console.log(err);
     });
+}
+
+const home_link = () => {
+    location.href= '/index.html'
 }
 
 $login_btn.addEventListener('click',api_login)

@@ -44,3 +44,11 @@ export const setCookie = (cookie_name, value) => {
     const cookie_value = value + '; expires=' + exdate.toUTCString();
     document.cookie = cookie_name + '=' + cookie_value;
 }
+
+/**
+ * @param {string} cookie_name 가져올 쿠키 이름
+ */
+export const getCookie = function(name){
+    const value = document.cookie.match('(^|;) ?' + name + '=([^;]*)(;|$)');
+    return value? value[2] : null;
+}
