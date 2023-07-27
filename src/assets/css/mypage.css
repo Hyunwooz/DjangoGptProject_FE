@@ -11,6 +11,7 @@ main {
     padding: 20px 30px 20px 15px;
     margin-right: 10px;
     border-right: 1px solid rgb(223, 223, 223);
+    min-width: 270px;
 }
 
 .post_section {
@@ -25,12 +26,14 @@ h3 {
 }
 
 aside:not(.user_info) {
+    padding: 15px 40px;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
 .user_info {
+    padding: 10px;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -40,9 +43,9 @@ aside:not(.user_info) {
 
 aside {
     border-radius: 5px;
-    padding: 10px;
     margin-bottom: 20px;
     background-color: rgb(218, 237, 255);
+    min-width: 200px;
 }
 
 aside a {
@@ -71,8 +74,11 @@ aside a {
 }
 
 .user-description {
-    font-size: 17px;
-    margin-bottom: 60px;
+    display: block;
+    font-size: 15px;
+    margin-bottom: 55px;
+    padding: 5px 30px;
+    line-height: 20px;
 }
 
 .user-pf-edit {
