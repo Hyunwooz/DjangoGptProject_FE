@@ -9,7 +9,11 @@ const is_logined = () => {
             element.style.display = 'flex'
         });
         
-        $avatar_img.src = profile.avatarUrl
+        if (profile.avatarUrl != "none"){
+            $avatar_img.src = profile.avatarUrl
+        } else {
+            $avatar_img.src = '/src/assets/img/sample_banner.png'
+        }
 
     } else {
         const is_not_logined = document.querySelectorAll('.is_not_logined')

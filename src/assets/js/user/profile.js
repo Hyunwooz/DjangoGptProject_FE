@@ -3,7 +3,7 @@ import { getCookie } from "../util.js"
 const $nickname = document.querySelector('#profile-name')
 const $aboutMe = document.querySelector('#profile-aboutMe')
 const $avatar_file = document.querySelector('#profile-avatar')
-const $avtar_img = document.querySelector('.user-avatar')
+const $avatar_img = document.querySelector('.user-avatar')
 const $save_btn = document.querySelector('.pf-save_btn')
 
 const profile_setting = () => {
@@ -12,8 +12,11 @@ const profile_setting = () => {
 
     $nickname.value = user_profile.name
     $aboutMe.innerText = user_profile.aboutMe
-    if ($avtar_img.src != 'none'){
-        $avtar_img.src = user_profile.avatarUrl
+
+    if (user_profile.avatarUrl != 'none'){
+        $avatar_img.src = user_profile.avatarUrl
+    } else {
+        $avatar_img.src = '/src/assets/img/sample_banner.png'
     }
 }
 
@@ -65,7 +68,7 @@ const previewImage = (event) => {
     let reader = new FileReader();
 
     reader.onload = function (event) {
-        $avtar_img.setAttribute("src", event.target.result);
+        $avatar_img.setAttribute("src", event.target.result);
     };
     reader.readAsDataURL(event.target.files[0]);
 };
