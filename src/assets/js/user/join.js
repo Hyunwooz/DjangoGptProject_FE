@@ -27,9 +27,11 @@ const api_join = async (event) => {
     .then((res) => res.json())
     .then((data) => {
         if (data.email) {
-            console.log(data.email[0])
+            alert(data.email[0])
         } else {
             console.log(data)
+            alert('회원가입을 축하합니다.')
+            location.href= '/src/view/login.html'
         }
     })
     .catch((err) => {
