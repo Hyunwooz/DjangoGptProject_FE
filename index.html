@@ -26,30 +26,27 @@
         <header>
             <nav class="header">
                 <h1>
-                    <a href="index.html">
+                    <a href="/index.html">
                         <img src="/src/assets/img/logo.svg" alt="AgAs">
                     </a>
                 </h1>
                 <ul class="navbar__menu">
-                    <li>
-                        <a href="src/view/question.html">TRY IT</a>
+                    <li class="is_logined">
+                        <a href="/src/view/question.html">TRY IT</a>
                     </li>
-                    <li>
-                        <a href="src/view/login.html">LOGIN</a>
-                    </li>
-                    <li>
-                        <a href="#">LOGOUT</a>
-                    </li>
-                    <li>
-                        <a href="src/view/join.html">JOIN</a>
-                    </li>
-                    <!-- <li>
-                        <a href="src/view/ad_type.html">AD TYPE</a>
-                    </li> -->
-                    <li>
+                    <li class="always_show">
                         <a href="/src/view/lounge.html">LOUNGE</a>
                     </li>
-                    <li>
+                    <li class="is_not_logined">
+                        <a href="/src/view/login.html">LOGIN</a>
+                    </li>
+                    <li class="is_not_logined">
+                        <a href="/src/view/join.html">JOIN</a>
+                    </li>
+                    <li class="is_logined">
+                        <a class="logout_btn" href="#">LOGOUT</a>
+                    </li>
+                    <li class="is_logined">
                         <a href="/src/view/profile.html">PROFILE</a>
                     </li>
                 </ul>
@@ -104,5 +101,7 @@
         </footer>
         <!-- // footer -->
         <script src="/src/assets/js/sectionScroll.js" type="module"></script>
+        <script src="/src/assets/js/is_logined.js"></script>
+        <script src="/src/assets/js/user/logout.js"></script>
     </body>
 </html>

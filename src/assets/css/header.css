@@ -17,12 +17,21 @@
 
 .navbar__menu {
     display: flex;
-    width: 550px;
+    width: 350px;
     list-style: none;
     padding-right: 30px;
 }
 
-.navbar__menu li {
+.navbar__menu li:not(.always_show) {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.always_show {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -30,6 +39,7 @@
     margin-top: 5px;
     margin-bottom: 5px;
 }
+
 .navbar__menu li a {
     text-decoration: none;
     font-weight: bold;

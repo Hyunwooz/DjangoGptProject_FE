@@ -1,4 +1,4 @@
-import {setCookie} from "./util.js"
+import {setCookie} from "../util.js"
 
 const $login_btn = document.querySelector('.login_btn')
 
@@ -30,7 +30,7 @@ const api_login = async (event) => {
             setCookie('access',data.token.access)
             setCookie('refresh',data.token.refresh)
             sessionStorage.setItem('user', data.user);
-            location.href('index.html')
+            location.href= '/index.html'
         }
     })
     .catch((err) => {
