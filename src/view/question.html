@@ -56,17 +56,19 @@
         <!-- // header -->
         <!-- main -->
         <main>
-            <div class="q_count">
-                <p class="q_count_changing">1 </p>
-                <p>/</p>
-                <p>5</p>
-            </div>
+            <aside>
+                <div class="q_count">
+                    <p class="q_count_changing">1 </p>
+                    <p>/</p>
+                    <p>5</p>
+                </div>
+            </aside>
             <form class="question_form" method="post">
                 <section id="question1">
-                    <h2>광고의 목표가 무엇인가요?</h2>
+                    <h2>1️⃣ 광고의 목표가 무엇인가요?</h2>
                     <div>
                         <fieldset class="campaignGoal">
-                            <div class="subtitle">목표 선택하기</div>
+                            <div class="subtitle">👉 목표 선택하기</div>
                             <div class="q_select_wrap">
                                 <div class="q_select">
                                     <label for="판매" >
@@ -103,11 +105,11 @@
                     </div>
                 </section>
                 <section id ="question2" class="hidden">
-                    <h2>광고의 유형은 무엇인가요?</h2>
+                    <h2>2️⃣ 광고의 유형은 무엇인가요?</h2>
                     <div>
                         <fieldset class="campaignType" required>
                             <div class="subtitle">
-                                <p>유형 선택하기</p>
+                                <p>👉 유형 선택하기</p>
                             </div>
                             <div class="q_select_wrap">
                                 <div class="q_select">
@@ -145,19 +147,19 @@
                     </div>
                 </section>
                 <section id="question3" class="hidden">
-                    <h2>광고의 카테고리가 무엇인가요?</h2>
+                    <h2>3️⃣ 광고의 카테고리가 무엇인가요?</h2>
                     <div>
                         <fieldset class="campaignCategory" aria-required="true">
-                            <div class="subtitle">카테고리 선택하기</div>
+                            <div class="subtitle">👉 카테고리 선택하기</div>
                             <div class="campaignCategoryValue"></div>
                         </fieldset>
                     </div>
                 </section>
                 <section id="question4" class="hidden">
-                    <h2>세부 키워드(단어)를 입력해주세요.</h2>
+                    <h2>4️⃣ 세부 키워드(단어)를 입력해주세요.</h2>
                     <div>
                         <fieldset class="campaignKeyword" aria-required="true">
-                            <div class="subtitle">키워드 입력</div>
+                            <div class="subtitle">👉 키워드 입력</div>
                                 <div class="keyword_input_wrap">
                                     <input
                                         type="text"
@@ -171,9 +173,9 @@
                     </div>
                 </section>
                 <section id="question5" class="hidden">
-                    <h2>광고 타겟팅 설정하기</h2>
+                    <h2>5️⃣ 광고 타겟팅 설정하기</h2>
                     <fieldset>
-                        <div class="subtitle">타겟팅 설정하기</div>
+                        <div class="subtitle">👉 타겟팅 설정하기</div>
                         <div class="taget_Wrap">
                             <div>
                                 <p class="target_title">성별</p>
@@ -196,6 +198,9 @@
                     </fieldset>
                     
                 </section>
+                <div class="nextStep_div">
+                    <button class="nextStep hidden">제출</button>
+                </div>
                 <div class="q_move_btn_wrap">
                     <button class="question_prev hidden">
                         이전</i>
@@ -203,9 +208,6 @@
                     <button class="question_next">
                         다음
                     </button>
-                </div>
-                <div class="nextStep_div">
-                    <button class="nextStep hidden">제출</button>
                 </div>
             </form>
         </main>
