@@ -1,4 +1,4 @@
-import { connectApi } from "./openAPI.js"
+import { connectApi } from "./toServer.js"
 
 const $input = document.querySelector(".input_question");
 const $connectBtn = document.querySelector("#connect");
@@ -22,7 +22,7 @@ const handleClickConnect = () => {
     };
 
     // 추가 질문창 hidden 제거
-    $addQuestion.classList.remove("hidden");
+    // $addQuestion.classList.remove("hidden");
 
     connectApi(JSON.stringify(question),"No")
 }
@@ -44,4 +44,4 @@ const handleSubmit = (event) => {
 
 $connectBtn.addEventListener("click", handleClickConnect);
 $disconnectBtn.addEventListener("click", handleClickDisconnect);
-$addQuestion.addEventListener("submit", handleSubmit);
+// $addQuestion.addEventListener("submit", handleSubmit);

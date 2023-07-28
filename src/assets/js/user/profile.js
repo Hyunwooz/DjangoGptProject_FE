@@ -27,8 +27,7 @@ const api_save = async (event) => {
 
     const name = $nickname.value
     const aboutMe = $aboutMe.value
-    const acess = getCookie('access')
-    const refresh = getCookie('refresh')
+    const access = getCookie('access')
     const avtar = $avatar_file.files[0]
 
     if (avtar){
@@ -43,7 +42,7 @@ const api_save = async (event) => {
     await fetch(url, {
         method: "POST",
         headers: {
-            "Authorization": `Bearer ${acess}`,
+            "Authorization": `Bearer ${access}`,
         },
         body: formData,
     })
