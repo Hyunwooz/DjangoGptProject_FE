@@ -5,7 +5,6 @@ main {
     padding-bottom: 30px;
     display: flex;
 }
-
 .profile_section {
     width: 18%;
     padding: 20px 30px 20px 15px;
@@ -39,13 +38,13 @@ aside:not(.user_info) {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    min-width: 200px;
 }
 
 aside {
     border-radius: 5px;
     margin-bottom: 20px;
     background-color: rgb(218, 237, 255);
-    min-width: 200px;
 }
 
 aside a {
@@ -108,7 +107,7 @@ aside a {
 
 .my_ad_wrap {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 20px;
     padding-left: 20px;
     padding-right: 20px;
@@ -116,11 +115,84 @@ aside a {
 
 .my_advertisement {
     width: 70%;
-    min-width: 400px;
-    height: 350px;
-    border-radius: 5px;
-    background-color: blueviolet;
+    width: 300px;
+    height: 380px;
+    border-radius: 10px;
+    /* background-image: url('/src/assets/img/back.png'); */
+    background-color: #FCF6F5;
+    box-shadow: 0 5px 10px rgba(70, 70, 70, 0.16), 0 3px 3px rgba(49, 49, 49, 0.13);
+    color:#2BAE66;
     margin-top: 40px;
     margin-left: auto;
     margin-right: auto;
+}
+
+.my_advertisement h4 {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 28px;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+.my_advertisement h5 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    margin-bottom: 30px;
+    font-size: 16px;
+    line-height: 19px;
+    color: #262223cc;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+.recommand_keywords {
+    margin-top: 10px;
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
+.ad_info {
+    margin-top: 10px;
+    display: flex;
+    gap: 30px;
+    padding-top: 10px;
+    border-top: 1px solid #26222334;
+}
+
+.info_part {
+    margin-bottom: 5px;
+}
+
+.recommand_keywords p:first-child,
+.info_part p:first-child {
+    font-size: 11px;
+    font-weight: bold;
+    color: #26222394;
+    margin-bottom: 5px;
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
+.recommand_keywords p:nth-child(2),
+.info_part p:nth-child(2) {
+    font-weight: bold;
+    font-size: 14px;
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
+.label_emoji {
+    margin-top: 10px;
+    margin-left: 10px;
+    /* width: 20px;
+    height: 20px;
+    background-color: #2BAE66;
+    border-radius: 50%; */
+    font-size: 20px;
 }
