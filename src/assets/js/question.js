@@ -1,5 +1,4 @@
 import { ages, categories, genders } from "./data.js";
-// import { debouncing } from "./util.js";
 
 const $campaignGoal = document.querySelector(".campaignGoal");
 const $campaignType = document.querySelector(".campaignType");

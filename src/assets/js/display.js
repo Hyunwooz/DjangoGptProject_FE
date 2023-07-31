@@ -51,14 +51,3 @@ function createDiv(value, text) {
 //         $chatBox.appendChild(ad);
 //     }
 // };
-
-// // 화면에 질문 그려주는 함수
-// export const printQuestion = async (data) => {
-//     if (data) {
-//         let textarea = document.createElement("p");
-//         textarea.classList =
-//             "answer border border-slate-300 rounded-xl w-full h-full py-3 px-3 my-3 resize-none";
-//         textarea.innerText = data;
-//         $chatBox.appendChild(textarea);
-//     }
-// };

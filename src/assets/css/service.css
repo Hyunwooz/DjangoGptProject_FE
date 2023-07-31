@@ -5,6 +5,36 @@ main {
     padding-bottom: 110px;
 }
 
+@keyframes spinner {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+#loading {
+    margin-top: 20px;
+}
+
+#loading .spinner {
+    box-sizing: border-box;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 5px solid transparent;
+    border-top-color: #4f22f1;
+    border-bottom-color: #4f22f1;
+    animation: spinner 0.8s ease infinite;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hidden {
+    display: none;
+}
+
 .answer_sheet:not(h2) {
     border: 1px solid rgb(189, 189, 189);
     box-shadow: 0 5px 10px rgba(70, 70, 70, 0.16), 0 3px 3px rgba(49, 49, 49, 0.13);

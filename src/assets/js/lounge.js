@@ -46,12 +46,6 @@ const myListLoad = async () => {
                     const article = article_div(element)
                     $ad_wrap.appendChild(article)
                 });
-
-                const advertisements = document.querySelectorAll('.my_advertisement')
-
-                advertisements.forEach(element => {
-                    element.addEventListener('click',detail_page)
-                });
             }
             
         })
@@ -61,7 +55,9 @@ const myListLoad = async () => {
 };
 
 const article_div = (data) => {
-    const my_advertisement = document.createElement('a')
+    console.log(data)
+
+    const my_advertisement = document.createElement('div')
     const emoji = document.createElement('div')
     const title = document.createElement('h4')
     const scripts = document.createElement('h5')
@@ -81,7 +77,6 @@ const article_div = (data) => {
 
 
     my_advertisement.classList = 'my_advertisement'
-    my_advertisement.id = data.id
     emoji.classList = 'label_emoji'
     emoji.innerText = '✔️'
     title.innerText = data.title
@@ -113,23 +108,5 @@ const article_div = (data) => {
     return my_advertisement
 }
 
-const detail_page = (event) => {
-    let target = event.target
-
-    while (target.classList != 'my_advertisement'){
-        target = target.parentNode
-    }
-    const pages = {
-        'pages': target.id
-    }
-    // 로컬스토리지(DB에 저장)
-    localStorage.setItem("renderPage", JSON.stringify(pages));
-
-    // 다음 페이지 Render
-    location.href = "detail.html";
-}
-
-
 profile_setting()
 myListLoad()
-
