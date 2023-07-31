@@ -1,6 +1,4 @@
-// import { createSearch_AD, createDisplay_AD, createVideo_AD } from "./answer.js";
-
-const $chatBox = document.querySelector(".answerSection");
+import { createSearch_AD, createDisplay_AD, createVideo_AD } from "./answer.js";
 
 let gptSetting = JSON.parse(localStorage.getItem("gptSetting"));
 gptSetting = gptSetting ?? [];
@@ -36,18 +34,18 @@ function createDiv(value, text) {
 
 // 화면에 광고 유형별 답변을 그려주는 함수
 // export const printAnswer = async (answer) => {
-//     const gpt_answer = JSON.parse(answer);
-//     if (gpt_answer.ad_type == "디스플레이") {
+//     const answer = JSON.parse(answer);
+//     if (answer.ad_type == "디스플레이") {
 //         const ad = createDisplay_AD(gpt_answer);
 
-//         $chatBox.appendChild(ad);
-//     } else if (gpt_answer.ad_type == "검색") {
+//         return ad
+//     } else if (answer.ad_type == "검색") {
 //         const ad = createSearch_AD(gpt_answer);
 
-//         $chatBox.appendChild(ad);
-//     } else if (gpt_answer.ad_type == "동영상") {
+//         return ad
+//     } else if (answer.ad_type == "동영상") {
 //         const ad = createVideo_AD(gpt_answer);
 
-//         $chatBox.appendChild(ad);
+//         return ad
 //     }
 // };
