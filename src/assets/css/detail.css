@@ -23,6 +23,7 @@ main {
 .post_info {
     border-bottom: 1px solid rgb(216, 216, 216);
     padding-bottom: 10px;
+    position: relative;
 }
 
 .detail_title {
@@ -62,6 +63,27 @@ main {
     height: 14px;
     margin-right: 10px;
     background: rgb(197, 197, 197);
+}
+
+.post_owner_menu {
+    position: absolute;
+    right: 0;
+    bottom: 10px;
+}
+
+.post_owner_menu button {
+    font-weight: bold;
+    background: none;
+    border-radius: 5px;
+    border: 1px solid rgb(139, 139, 139);
+    padding: 3px 7px;
+    cursor: pointer;
+}
+
+.post_owner_menu button:hover {
+    background-color: rgb(56, 135, 253);
+    color: white;
+    border-radius: 5px;
 }
 
 .post_content {
@@ -311,4 +333,91 @@ main {
 .display_div>div>div p {
     font-size: 14px;
     line-height: 18px;
+}
+
+.comment_section {
+    margin-top: 50px;
+    padding: 10px;
+    border-top: 1px solid rgb(216, 216, 216);
+}
+
+.post_comments {
+    margin-top: 2.4rem;
+}
+
+.post_comment {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.comment_title {
+    margin-top: 15px;
+    margin-bottom: 30px;
+	font-size: 22px;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+.comment_writer_avatar {
+    width: 30px;
+    height: 30px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-right: 10px;    
+}
+
+.loginuser_avatar {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-right: 10px;    
+}
+
+.comment_input {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 500px;
+}
+
+.comment_input button {
+    background: none;
+    border: none;
+    font-size: 20px;
+    position: absolute;
+    right: 2px;
+}
+
+.comment_input button:hover {
+    color:  rgb(55, 170, 236);
+}
+
+.comment_writer_name {
+    font-weight: bold;
+}
+
+.comment_writer_delete {
+    display: flex;
+    margin-left: 5rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.comment_input input {
+    border: none;
+    background: none;
+    border-bottom: 1px solid rgb(199, 199, 199);
+    box-sizing: border-box;
+    height: 30px;
+    padding: 5px 10px 5px 10px;
+    width: 100%;
+    resize: none;
+}
+
+.comment_writer_delete .btn-delete {
+    width: 3rem;
+    height: 3rem;
 }

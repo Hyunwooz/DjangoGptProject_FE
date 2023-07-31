@@ -67,19 +67,20 @@
                         <div class="created"></div>
                         <div class="views"></div>
                     </div>
-                    <div>
-                        <button>삭제</button>
-                        <button>공개</button>
-                        <button>비공개</button>
+                    <div class="post_owner_menu">
+                        <button class="post_delete">삭제</button>
+                        <button class="post_public">공개</button>
+                        <button class="post_private">비공개</button>
                     </div>
                 </div>
                 <div class="post_content"></div>
             </section>
             
-            <section>
+            <section class="comment_section">
                 <h3 class='comment_title'>Comments</h3>
-                <form class='comment_input' style="display: flex; align-items: center;" action="{% url 'blog:cm-write' pk=post.pk %}" method="post">
-                    <img src="" alt="" class="loginuser_avatar" />
+                <form class='comment_input' method="post">
+                    <img src="/src/assets/img/sample_banner.png" alt="" class="loginuser_avatar" />
+                    <input type="text">
                     <button calss="comment-submit" type="submit" value=""><i class="fa-solid fa-paper-plane"></i></button>
                 </form>
                 <ul class='post_comments'>

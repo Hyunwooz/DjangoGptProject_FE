@@ -78,11 +78,15 @@ const article_div = (data) => {
     const p6 = document.createElement('p')
     const p7 = document.createElement('p')
     const p8 = document.createElement('p')
-
+    const e_p1 = document.createElement('p')
+    const e_p2 = document.createElement('p')
 
     my_advertisement.classList = 'my_advertisement'
     my_advertisement.id = data.id
     emoji.classList = 'label_emoji'
+    // e_p1.innerText =
+    // e_p2.innerText =
+    console.log(data)
     emoji.innerText = '✔️'
     title.innerText = data.title
     scripts.innerText = data.description
