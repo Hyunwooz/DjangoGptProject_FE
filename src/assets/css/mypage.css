@@ -119,9 +119,9 @@ aside a {
     height: 380px;
     border-radius: 10px;
     /* background-image: url('/src/assets/img/back.png'); */
-    background-color: #FCF6F5;
+    background-color: #fffcfc;
     box-shadow: 0 5px 10px rgba(70, 70, 70, 0.16), 0 3px 3px rgba(49, 49, 49, 0.13);
-    color:#2BAE66;
+    color:#00497a;
     margin-top: 40px;
     margin-left: auto;
     margin-right: auto;
@@ -135,6 +135,7 @@ aside a {
     line-height: 28px;
     padding-left: 25px;
     padding-right: 25px;
+    height: 56px;
 }
 
 .my_advertisement h5 {
@@ -145,8 +146,8 @@ aside a {
     -webkit-box-orient: vertical;
     margin-bottom: 30px;
     font-size: 16px;
+    font-weight: bold;
     line-height: 19px;
-    color: #262223cc;
     padding-left: 25px;
     padding-right: 25px;
 }
@@ -190,6 +191,7 @@ aside a {
 .label_emoji {
     margin-top: 10px;
     margin-left: 10px;
+    margin-bottom: 20px;
     /* width: 20px;
     height: 20px;
     background-color: #2BAE66;
