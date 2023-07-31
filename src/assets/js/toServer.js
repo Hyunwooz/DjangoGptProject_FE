@@ -21,8 +21,8 @@ const apiPost = async (data) => {
     })
         .then((res) => res.json())
         .then((res) => {
-            console.log(res)
-            // printAnswer(res.choices[0].message.content);
+            alert('생성되었습니다.')
+            location.href = "mypage.html";
         })
         .catch((err) => {
             console.log(err);

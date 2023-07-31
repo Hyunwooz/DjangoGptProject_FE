@@ -69,6 +69,7 @@ main {
     position: absolute;
     right: 0;
     bottom: 10px;
+    display: none;
 }
 
 .post_owner_menu button {

@@ -18,6 +18,20 @@ main {
     margin-top: 20px;
 }
 
+#loading p {
+    font-size: 20px;
+    text-align: center;
+    font-weight: bold;
+    line-height: 26px;
+}
+.loading_message1 {
+    margin-top: 60px;
+}
+
+.loading_message2 {
+    margin-bottom: 60px;
+}
+
 #loading .spinner {
     box-sizing: border-box;
     width: 50px;

@@ -46,6 +46,11 @@ aside a {
     margin-bottom: 10px;
 }
 
+.recent_post {
+    cursor: pointer;
+    color: #00497a;
+}
+
 .lounge_title {
     display: block;
     padding-bottom: 30px;
@@ -56,19 +61,121 @@ aside a {
 
 .post_wrap {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 110px;
+    padding-right: 110px;
 }
 
-.post {
+
+
+.post_advertisement {
     width: 70%;
-    min-width: 400px;
-    height: 350px;
-    border-radius: 5px;
-    background-color: blueviolet;
+    width: 300px;
+    height: 380px;
+    border-radius: 10px;
+    /* background-image: url('/src/assets/img/back.png'); */
+    background-color: #fffcfc;
+    box-shadow: 0 5px 10px rgba(70, 70, 70, 0.16), 0 3px 3px rgba(49, 49, 49, 0.13);
+    color:#00497a;
     margin-top: 40px;
     margin-left: auto;
     margin-right: auto;
+    cursor: pointer;
 }
+
+.post_advertisement h4 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 28px;
+    padding-left: 25px;
+    padding-right: 25px;
+    height: 56px;
+}
+
+.post_advertisement h5 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    margin-bottom: 30px;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 19px;
+    padding-left: 25px;
+    padding-right: 25px;
+    height: 76px;
+}
+
+.recommand_keywords {
+    margin-top: 10px;
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
+.ad_info {
+    margin-top: 10px;
+    display: flex;
+    gap: 30px;
+    padding-top: 10px;
+    border-top: 1px solid #26222334;
+}
+
+.info_part {
+    margin-bottom: 5px;
+}
+
+.recommand_keywords {
+    height: 28px;
+    margin-top: 0;
+}
+
+.recommand_keywords p:first-child,
+.info_part p:first-child {
+    font-size: 11px;
+    font-weight: bold;
+    color: #26222394;
+    margin-bottom: 5px;
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
+.recommand_keywords p:nth-child(2),
+.info_part p:nth-child(2) {
+    font-weight: bold;
+    font-size: 14px;
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
+.post_label {
+    margin: 20px 10px 5px 10px;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 15px;
+}
+
+.lounge_owner_img {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+}
+
+.post_label p {
+    font-size: 12px;
+    font-weight: bold;
+    margin-left: 7px;
+}
+
+.post_label p:nth-child(3),
+.post_label p:nth-child(4){
+    text-align: center;
+    border-left: 1px solid #919191c7;
+    padding-left: 7px;
+}
+

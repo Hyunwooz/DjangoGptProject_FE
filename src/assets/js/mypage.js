@@ -37,10 +37,10 @@ const myListLoad = async () => {
     })
         .then((res) => res.json())
         .then((res) => {
+
             if (res.data.length < 1) {
-                const article = document.createElement('h4')
+                const article = document.querySelector('.no_post')
                 article.innerText = '게시물이 존재하지 않습니다.'
-                $ad_wrap.appendChild(article)
             } else {
                 (res.data).forEach(element => {
                     const article = article_div(element)
@@ -79,17 +79,16 @@ const article_div = (data) => {
     const p7 = document.createElement('p')
     const p8 = document.createElement('p')
     const e_p1 = document.createElement('p')
-    const e_p2 = document.createElement('p')
+    const is_public = document.createElement('p')
 
     my_advertisement.classList = 'my_advertisement'
     my_advertisement.id = data.id
     emoji.classList = 'post_label'
     if (data.is_public){
-        e_p2.innerText = 'public'
+        is_public.innerText = 'public'
     } else {
-        e_p2.innerText = 'private'
+        is_public.innerText = 'private'
     }
-    e_p1.innerText = '✔️'
     title.innerText = data.title
     scripts.innerText = data.description
 
@@ -108,7 +107,7 @@ const article_div = (data) => {
     p7.innerText = '✨ Recommand Keywords'
     p8.innerText = data.recommand_keyword
 
-    emoji.append(e_p1,e_p2)
+    emoji.append(is_public)
     div1.append(div2,div3)
     div2.append(p1,p2)
     div3.append(p3,p4)

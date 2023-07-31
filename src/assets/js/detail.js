@@ -7,7 +7,7 @@ const $private_btn = document.querySelector('.post_private')
 // Django Server URL
 
 const renderPage = JSON.parse(localStorage.getItem("renderPage"));
-
+        
 // Django Server와 통신
 const ChatLoad = async () => {
     const url = `http://127.0.0.1:8000/chatbot/detail/`;
@@ -23,7 +23,15 @@ const ChatLoad = async () => {
         .then((res) => res.json())
         .then((res) => {
             
-            console.log('작성자 확인용 데이터 : '+res.writer.email)
+            if (sessionStorage.getItem('user')) {
+                
+                const user = JSON.parse(sessionStorage.getItem('user'))
+
+                if (user.account.email == res.writer.email){
+                    const post_owner_menu = document.querySelector('.post_owner_menu')
+                    post_owner_menu.style.display = 'block'
+                }
+            }
 
             if (res.anwser.is_public) {
                 $public_btn.style.display = 'none'
