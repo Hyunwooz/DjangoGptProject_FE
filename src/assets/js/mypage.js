@@ -83,11 +83,13 @@ const article_div = (data) => {
 
     my_advertisement.classList = 'my_advertisement'
     my_advertisement.id = data.id
-    emoji.classList = 'label_emoji'
-    // e_p1.innerText =
-    // e_p2.innerText =
-    console.log(data)
-    emoji.innerText = '✔️'
+    emoji.classList = 'post_label'
+    if (data.is_public){
+        e_p2.innerText = 'public'
+    } else {
+        e_p2.innerText = 'private'
+    }
+    e_p1.innerText = '✔️'
     title.innerText = data.title
     scripts.innerText = data.description
 
@@ -106,6 +108,7 @@ const article_div = (data) => {
     p7.innerText = '✨ Recommand Keywords'
     p8.innerText = data.recommand_keyword
 
+    emoji.append(e_p1,e_p2)
     div1.append(div2,div3)
     div2.append(p1,p2)
     div3.append(p3,p4)

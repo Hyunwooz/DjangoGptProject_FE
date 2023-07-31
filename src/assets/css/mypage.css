@@ -196,13 +196,14 @@ aside a {
     padding-left: 20px;
 }
 
-.label_emoji {
-    margin-top: 10px;
-    margin-left: 10px;
-    margin-bottom: 20px;
-    /* width: 20px;
-    height: 20px;
-    background-color: #2BAE66;
-    border-radius: 50%; */
+.post_label {
+    margin: 10px 10px 20px 10px;
     font-size: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.post_label p:last-child {
+    font-size: 14px;
+    font-weight: bold;
 }

@@ -1,13 +1,16 @@
 import { createSearch_AD, createDisplay_AD, createVideo_AD } from "./answer.js";
 
 const $post_content = document.querySelector('.post_content')
-
+const $del_btn = document.querySelector('.post_delete')
+const $public_btn = document.querySelector('.post_public')
+const $private_btn = document.querySelector('.post_private')
 // Django Server URL
-const url = `http://127.0.0.1:8000/chatbot/detail/`;
+
+const renderPage = JSON.parse(localStorage.getItem("renderPage"));
 
 // Django Server와 통신
 const ChatLoad = async () => {
-    const renderPage = JSON.parse(localStorage.getItem("renderPage"));
+    const url = `http://127.0.0.1:8000/chatbot/detail/`;
 
     const result = await fetch(url, {
         method: "POST",
@@ -22,19 +25,26 @@ const ChatLoad = async () => {
             
             console.log('작성자 확인용 데이터 : '+res.writer.email)
 
+            if (res.anwser.is_public) {
+                $public_btn.style.display = 'none'
+            } else {
+                $private_btn.style.display = 'none'
+            }
+
             const detail_title = document.querySelector('.detail_title')
             const author_profile = document.querySelector('.avatarImg')
             const created = document.querySelector('.created')
             const views = document.querySelector('.views')
 
             detail_title.innerText = res.anwser.title
+
             if (res.profile.avatarUrl == 'none'){
                 author_profile.src = '/src/assets/img/sample_banner.png'
             } else {
                 author_profile.src = 'http://127.0.0.1:8000/media/' + res.profile.avatarUrl
             }
             
-            const time = new Date(res.qeustion.created_at)
+            const time = new Date(res.anwser.created_at)
             const year = time.getFullYear();
             const month = time.getMonth() +1;
             const date = time.getDate();
@@ -42,12 +52,14 @@ const ChatLoad = async () => {
             const minutes = time.getMinutes();
 
             created.innerText = `${year}년 ${month}월 ${date}일 ${hours}시 ${minutes}분 `
-            views.innerText = 'Views : '+res.qeustion.views
+            views.innerText = 'Views : '+res.anwser.views
 
-            const c_q = create_q(res.qeustion.content)
+            const c_q = create_q(res.anwser.question)
             const c_a = printAnswer(res.anwser)
 
             $post_content.append(c_q,c_a)
+
+            
         })
         .catch((err) => {
             console.log(err);
@@ -107,4 +119,73 @@ const printAnswer = (data) => {
     }
 };
 
+// Django Server와 통신
+const chatDelete = async () => {
+    const url = `http://127.0.0.1:8000/chatbot/delete/`;
+
+    const result = await fetch(url, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: renderPage.pages,
+        redirect: "follow",
+    })
+        .then((res) => res.json())
+        .then((res) => {
+            console.log(res)
+            location.href = 'index.html'
+        })
+        .catch((err) => {
+            console.log(err);
+        });
+};
+
+// Django Server와 통신
+const chatPublic = async () => {
+    const url = `http://127.0.0.1:8000/chatbot/public/`;
+
+    const result = await fetch(url, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: renderPage.pages,
+        redirect: "follow",
+    })
+        .then((res) => res.json())
+        .then((res) => {
+            console.log(res)
+            location.reload()
+        })
+        .catch((err) => {
+            console.log(err);
+        });
+};
+
+// Django Server와 통신
+const chatPrivate = async () => {
+    const url = `http://127.0.0.1:8000/chatbot/private/`;
+
+    const result = await fetch(url, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: renderPage.pages,
+        redirect: "follow",
+    })
+        .then((res) => res.json())
+        .then((res) => {
+            console.log(res)
+            location.reload()
+        })
+        .catch((err) => {
+            console.log(err);
+        });
+};
+
 ChatLoad()
+$del_btn.addEventListener('click',chatDelete)
+$public_btn.addEventListener('click',chatPublic)
+$private_btn.addEventListener('click',chatPrivate)
