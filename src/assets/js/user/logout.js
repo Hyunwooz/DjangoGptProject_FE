@@ -1,6 +1,5 @@
 const $logout_btn = document.querySelector('.logout_btn')
 
-
 const logout = (event) => {
     event.preventDefault()
     

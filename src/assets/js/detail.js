@@ -12,11 +12,9 @@ const $comment_count = document.querySelector('.comment_count')
 const $like_btn = document.querySelector('.like_icon')
 const $like_count = document.querySelector('.like_count')
 
-// Django Server URL
-
 const renderPage = JSON.parse(localStorage.getItem("renderPage"));
         
-// Django Server와 통신
+// Django Server에서 Post Detail 가져온 후 DOM 생성
 const ChatLoad = async () => {
     const url = `http://127.0.0.1:8000/chatbot/detail/`;
 
@@ -50,10 +48,9 @@ const ChatLoad = async () => {
                 $comment_ul.innerHTML = '<li class="no_comment">댓글이 없습니다.</li>'
             }
 
-            
             const like_obj = res.anwser.like
-            const like_d = Object.values(like_obj)
-            const likes_count = like_d.filter(element => 'like' === element).length;
+            const like_true = Object.values(like_obj)
+            const likes_count = like_true.filter(element => 'like' === element).length;
             
             $like_count.innerText = likes_count
 
@@ -99,7 +96,11 @@ const ChatLoad = async () => {
             if (res.profile.avatarUrl == 'none'){
                 author_profile.src = '/src/assets/img/sample_banner.png'
             } else {
-                author_profile.src = 'http://127.0.0.1:8000/media/' + res.profile.avatarUrl
+                if(res.writer.login_method != "github"){
+                    author_profile.src = 'http://127.0.0.1:8000/media/' + res.profile.avatarUrl
+                } else {
+                    author_profile.src = res.profile.avatarUrl
+                }
             }
             
             const time = new Date(res.anwser.created_at)
@@ -113,11 +114,9 @@ const ChatLoad = async () => {
             views.innerText = 'Views : '+res.anwser.views
 
             const c_q = create_q(res.anwser.question)
-            const c_a = printAnswer(res.anwser)
+            const c_a = create_a(res.anwser)
 
             $post_content.append(c_q,c_a)
-
-            
         })
         .catch((err) => {
             console.log(err);
@@ -149,7 +148,7 @@ const createDiv = (value, text) => {
     const input = document.createElement("input");
     const label = document.createElement("label");
 
-    input.value = value
+    input.value = value.replace(/_/g, " ");
     input.readOnly = true;
     label.innerText = text;
     div.append(label, input);
@@ -158,7 +157,7 @@ const createDiv = (value, text) => {
 }
 
 // 광고 유형별 답변을 그려주는 함수
-const printAnswer = (data) => {
+const create_a = (data) => {
 
     // const answer = JSON.parse(data);
 
@@ -191,7 +190,6 @@ const chatDelete = async () => {
     })
         .then((res) => res.json())
         .then((res) => {
-            console.log(res)
             location.href = 'lounge.html'
         })
         .catch((err) => {
@@ -213,7 +211,6 @@ const chatPublic = async () => {
     })
         .then((res) => res.json())
         .then((res) => {
-            console.log(res)
             location.reload()
         })
         .catch((err) => {
@@ -235,7 +232,6 @@ const chatPrivate = async () => {
     })
         .then((res) => res.json())
         .then((res) => {
-            console.log(res)
             location.reload()
         })
         .catch((err) => {
@@ -270,7 +266,6 @@ const commentWrite = async (event) => {
     })
         .then((res) => res.json())
         .then((res) => {
-            console.log(res)
             location.reload()
         })
         .catch((err) => {
@@ -291,7 +286,13 @@ const commentRead = (data) => {
     li.className = 'post_comment';
     li.id = data.id
     avatar.className = 'comment_writer_avatar';
-    avatar.src = 'http://127.0.0.1:8000/media/' + data.owner.avatarUrl;
+    
+    if(data.owner.avatarUrl.includes('github')) {
+        avatar.src = data.owner.avatarUrl
+    } else {
+        avatar.src = 'http://127.0.0.1:8000/media/' + data.owner.avatarUrl;
+    }
+    
     info_div.className = 'comment_writer_info'
     writer.className = 'comment_writer_name'
     writer.innerText = data.owner.name
@@ -334,7 +335,6 @@ const commentDelete = async (event) => {
     })
         .then((res) => res.json())
         .then((res) => {
-            console.log(res)
             location.reload()
         })
         .catch((err) => {
@@ -358,7 +358,6 @@ const likeFunc = async () => {
     })
         .then((res) => res.json())
         .then((res) => {
-            console.log(res)
             location.reload()
         })
         .catch((err) => {

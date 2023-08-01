@@ -1,10 +1,8 @@
 let gptSetting = JSON.parse(localStorage.getItem("gptSetting"));
 gptSetting = gptSetting ?? [];
 
-render();
-
 // gptSetting에 저장되어 있는 질문을 보여주는 함수.
-function render() {
+const render = () => {
     const show = document.querySelector(".showSetting");
     const goal = createDiv(gptSetting[0].newCampaignGoal, "광고 목표");
     const type = createDiv(gptSetting[0].newCampaignType, "광고 유형");
@@ -17,7 +15,7 @@ function render() {
 }
 
 // 기초 질문틀을 만들어주는 함수
-function createDiv(value, text) {
+const createDiv = (value, text) => {
     const div = document.createElement("div");
     const input = document.createElement("input");
     const label = document.createElement("label");
@@ -29,3 +27,5 @@ function createDiv(value, text) {
 
     return div;
 }
+
+render();

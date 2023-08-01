@@ -1,4 +1,4 @@
-// 화면에 검색 광고 스크립트를 그려주는 함수img
+// 화면에 검색 광고 스크립트를 그려주는 함수
 export const createSearch_AD = (data) => {
 
     const search_Div = document.createElement("div");
@@ -64,14 +64,9 @@ export const createDisplay_AD = (data) => {
     
     // 디스플레이 광고의 예시를 표시해주는 attribute 설정
     // 배너와 광고 문구 등이 표시되는 div 설정
-    ad_wrap.classList = ``;
-    ad_banner.classList = ``;
     
     // 광고의 추천 제목과 스크립트가 표시되는 div 설정
-    ad_Div.classList = ""
-    ad_Title_A.classList = ""
     ad_Title_A.innerText = data.title;
-    ad_Desc_P.classList = ""
     ad_Desc_P.innerText = data.description;
     
     // 예시이미지들을 setAttribute 해주기
@@ -119,7 +114,6 @@ export const createVideo_AD = (data) => {
     // 전체 동영상 광고를 감싸주는 attribute 설정
     video_Wrap.classList = `video_div`;
     video_Div.classList = "video_ad_main"
-    video_Display_Div.classList =""
     
     // 예시이미지들을 setAttribute 해주기
     video_Display_Img.className = 'video_ad_main_img'

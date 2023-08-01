@@ -1,3 +1,4 @@
+// 로그인이 되있는지 확인
 const is_logined = () => {
 
     if (sessionStorage.getItem('user')) {

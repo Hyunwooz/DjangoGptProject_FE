@@ -57,15 +57,7 @@ const github_login = async (event) => {
     });
 }
 
-const home_link = () => {
-    location.href= '/index.html'
-}
-const is_logined = () => {
 
-    if (sessionStorage.getItem('user')) {
-        location.href = '/index.html'
-    }
-}
 
 const github_login_func = async() => {
     const urlParams = new URL(location.href).searchParams;
@@ -94,6 +86,18 @@ const github_login_func = async() => {
         .catch((err) => {
             console.log(err);
         });
+    }
+}
+
+const home_link = () => {
+    location.href= '/index.html'
+}
+
+// 로그인이 되있으면 홈으로
+const is_logined = () => {
+
+    if (sessionStorage.getItem('user')) {
+        location.href = '/index.html'
     }
 }
 

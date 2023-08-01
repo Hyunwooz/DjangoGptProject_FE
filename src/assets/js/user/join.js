@@ -29,7 +29,6 @@ const api_join = async (event) => {
         if (data.email) {
             alert(data.email[0])
         } else {
-            console.log(data)
             alert('회원가입을 축하합니다.')
             location.href= '/src/view/login.html'
         }
@@ -39,6 +38,7 @@ const api_join = async (event) => {
     });
 }
 
+// 로그인이 되있으면 홈으로
 const is_logined = () => {
 
     if (sessionStorage.getItem('user')) {
