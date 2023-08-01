@@ -46,17 +46,48 @@ aside a {
     margin-bottom: 10px;
 }
 
+.category_serch,
 .recent_post {
     cursor: pointer;
     color: #00497a;
 }
 
+.search_title,
 .lounge_title {
     display: block;
     padding-bottom: 30px;
     border-bottom: 1px solid rgb(216, 216, 216);
     font-size: 28px;
     font-weight: bold;
+}
+
+.search_title {
+    margin-bottom: 30px;
+}
+
+.search_div{
+	position: relative;
+	width: 100%;
+	margin-bottom: 2rem;
+}
+
+.search__text {
+	border-radius: 5px;
+	width: 97%;
+	background-color: rgb(245, 245, 245);
+	border: none;
+	padding: 15px 20px 15px 10px;
+    font-size: 16px;
+}
+
+.search__btn {
+	position: absolute;
+	background: none;
+	border: none;
+	padding: 0;
+	font-size: 20px;
+	bottom: 10px;
+	right: 22px;
 }
 
 .post_wrap {
@@ -67,21 +98,21 @@ aside a {
     padding-right: 110px;
 }
 
-
-
 .post_advertisement {
     width: 70%;
     width: 300px;
     height: 380px;
     border-radius: 10px;
     /* background-image: url('/src/assets/img/back.png'); */
-    background-color: #fffcfc;
-    box-shadow: 0 5px 10px rgba(70, 70, 70, 0.16), 0 3px 3px rgba(49, 49, 49, 0.13);
+    background-color: #f8faff;
+    border: 1px solid rgb(233, 233, 233);
+    /* box-shadow: 0 5px 10px rgba(70, 70, 70, 0.16), 0 3px 3px rgba(49, 49, 49, 0.13); */
     color:#00497a;
     margin-top: 40px;
     margin-left: auto;
     margin-right: auto;
     cursor: pointer;
+    position: relative;
 }
 
 .post_advertisement h4 {

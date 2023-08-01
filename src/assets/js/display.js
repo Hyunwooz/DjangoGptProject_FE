@@ -1,5 +1,3 @@
-import { createSearch_AD, createDisplay_AD, createVideo_AD } from "./answer.js";
-
 let gptSetting = JSON.parse(localStorage.getItem("gptSetting"));
 gptSetting = gptSetting ?? [];
 
@@ -31,21 +29,3 @@ function createDiv(value, text) {
 
     return div;
 }
-
-// 화면에 광고 유형별 답변을 그려주는 함수
-// export const printAnswer = async (answer) => {
-//     const answer = JSON.parse(answer);
-//     if (answer.ad_type == "디스플레이") {
-//         const ad = createDisplay_AD(gpt_answer);
-
-//         return ad
-//     } else if (answer.ad_type == "검색") {
-//         const ad = createSearch_AD(gpt_answer);
-
-//         return ad
-//     } else if (answer.ad_type == "동영상") {
-//         const ad = createVideo_AD(gpt_answer);
-
-//         return ad
-//     }
-// };

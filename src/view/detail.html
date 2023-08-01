@@ -68,14 +68,21 @@
                         <div class="views"></div>
                     </div>
                     <div class="post_owner_menu">
-                        <button class="post_delete">삭제</button>
-                        <button class="post_public">공개</button>
-                        <button class="post_private">비공개</button>
+                        <button class="post_delete"><i class="fa-solid fa-trash-can"></i></button>
+                        <button class="post_public"><i class="fa-solid fa-eye"></i></button>
+                        <button class="post_private"><i class="fa-solid fa-eye-slash"></i></button>
                     </div>
                 </div>
                 <div class="post_content"></div>
+                <div class="like_div">
+                    <i class="fa-regular fa-heart like_icon"></i>
+                    <p>좋아요</p>
+                    <p class="like_count">0</p>
+                    <i class="fa-regular fa-comment-dots comment_icon"></i>
+                    <p>댓글</p>
+                    <p class="comment_count">0</p>
+                </div>
             </section>
-            
             <section class="comment_section">
                 <h3 class='comment_title'>Comments</h3>
                 <form class='comment_input' method="post">
@@ -83,24 +90,9 @@
                     <input type="text">
                     <button calss="comment-submit" type="submit" value=""><i class="fa-solid fa-paper-plane"></i></button>
                 </form>
+                
                 <ul class='post_comments'>
-                        <!-- <li class='post_comment'>
-                            <img class='comment_writer_avatar' src={{comment.writer.profile.avatarUrl.url}}></img>
-                            <div class='comment_writer_info'>
-                                <p class='comment_writer_name'>{{ comment.writer.profile.name }}</p>
-                                <p class='comment_writer_content'>{{ comment.content }}</p>
-                            </div>
-                            {% if request.user == comment.writer %}
-                            <form class='comment_writer_delete' action="{% url 'blog:cm-delete' pk=comment.pk %}" method="post">
-                                {% csrf_token %}
-                                <input type="submit" class="btn-delete" value=""></input>
-                            </form>
-                            {% endif %}
-                        </li>
-                    {% endfor %}
-                    {% else %}
-                        <li>댓글이 없습니다.</li>
-                    {% endif %} -->
+                    <!-- <li class="no_comment">댓글이 없습니다.</li> -->
                 </ul>
             </section>
         </main>

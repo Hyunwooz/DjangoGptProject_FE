@@ -1,17 +1,21 @@
 const $post_wrap = document.querySelector('.post_wrap')
 
 // Django Server URL
-const url = `http://127.0.0.1:8000/chatbot/lounge/`;
+const url = `http://127.0.0.1:8000/chatbot/search/`;
+const searchInfo = JSON.parse(localStorage.getItem("search"));
 const $search__btn = document.querySelector('.search__btn')
 
 // Django Server와 통신
 const chatListLoad = async () => {
+    const $main_title = document.querySelector('.lounge_title')
+    $main_title.innerText = `💻 ${searchInfo.type} : ${searchInfo.search}에 대한 검색 결과`
 
     const result = await fetch(url, {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
         },
+        body: JSON.stringify(searchInfo),
         redirect: "follow",
     })
         .then((res) => res.json())
