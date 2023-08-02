@@ -64,16 +64,17 @@ const ChatLoad = async () => {
                     const post_owner_menu = document.querySelector('.post_owner_menu')
                     post_owner_menu.style.display = 'block'
                 }
-                if( user.profile.avatarUrl != 'none'){
-                    const comment_avatar = document.querySelector('.loginuser_avatar')
 
+                const comment_avatar = document.querySelector('.loginuser_avatar')
+
+                if( user.profile.avatarUrl != 'none'){
                     if(user.profile.avatarUrl.includes('github')) {
                         comment_avatar.src = user.profile.avatarUrl
                     } else {
                         comment_avatar.src = 'http://43.200.64.24/media/' + user.profile.avatarUrl
                     }
-
-                    comment_avatar.src = 'http://43.200.64.24/media/' + user.profile.avatarUrl
+                } else {
+                    comment_avatar.src = '/src/assets/img/sample_banner.png'
                 }
 
                 if(like_obj[user.account.email] == 'like'){
@@ -104,9 +105,9 @@ const ChatLoad = async () => {
                 author_profile.src = '/src/assets/img/sample_banner.png'
             } else {
                 if(res.profile.avatarUrl.includes('github')){
-                    author_profile.src = 'http://43.200.64.24/media/' + res.profile.avatarUrl
-                } else {
                     author_profile.src = res.profile.avatarUrl
+                } else {
+                    author_profile.src = 'http://43.200.64.24/media/' + res.profile.avatarUrl
                 }
             }
             
