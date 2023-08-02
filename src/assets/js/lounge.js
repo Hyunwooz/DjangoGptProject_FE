@@ -17,9 +17,8 @@ const chatListLoad = async () => {
         .then((res) => res.json())
         .then((res) => {
             if (res.data.length < 1) {
-                const article = document.createElement('h4')
+                const article = document.querySelector('.no_post')
                 article.innerText = '게시물이 존재하지 않습니다.'
-                $post_wrap.appendChild(article)
             } else {
                 (res.data).forEach(element => {
                     const article = article_div(element)

@@ -21,9 +21,8 @@ const chatListLoad = async () => {
         .then((res) => res.json())
         .then((res) => {
             if (res.data.length < 1) {
-                const article = document.createElement('h4')
+                const article = document.querySelector('.no_post')
                 article.innerText = '게시물이 존재하지 않습니다.'
-                $post_wrap.appendChild(article)
             } else {
                 (res.data).forEach(element => {
                     const article = article_div(element)
@@ -171,10 +170,7 @@ const detail_page = (event) => {
     const pages = {
         'pages': target.id
     }
-    // 로컬스토리지(DB에 저장)
     localStorage.setItem("renderPage", JSON.stringify(pages));
-
-    // 다음 페이지 Render
     location.href = "detail.html";
 }
 
@@ -184,10 +180,7 @@ const recent_detail_page = (event) => {
     const pages = {
         'pages': target.id
     }
-    // 로컬스토리지(DB에 저장)
     localStorage.setItem("renderPage", JSON.stringify(pages));
-
-    // 다음 페이지 Render
     location.href = "detail.html";
 }
 
@@ -198,10 +191,7 @@ const categry_search_page = (event) => {
         'search': target.name,
         'type': 'category'
     }
-    // 로컬스토리지(DB에 저장)
     localStorage.setItem("search", JSON.stringify(search));
-
-    // 다음 페이지 Render
     location.href = "search.html";
 }
 
@@ -214,10 +204,7 @@ const title_search_page = (event) => {
         'search': $search__text.value,
         'type': 'title'
     }
-    // 로컬스토리지(DB에 저장)
     localStorage.setItem("search", JSON.stringify(search));
-
-    // 다음 페이지 Render
     location.href = "search.html";
 }
 

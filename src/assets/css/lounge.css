@@ -98,6 +98,12 @@ aside a {
     padding-right: 110px;
 }
 
+.no_post {
+    margin-top: 40px;
+    font-weight: bold;
+    font-size: 18px;
+}
+
 .post_advertisement {
     width: 70%;
     width: 300px;

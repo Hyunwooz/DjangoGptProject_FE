@@ -37,7 +37,6 @@ const myListLoad = async () => {
     })
         .then((res) => res.json())
         .then((res) => {
-
             if (res.data.length < 1) {
                 const article = document.querySelector('.no_post')
                 article.innerText = '게시물이 존재하지 않습니다.'
@@ -53,7 +52,6 @@ const myListLoad = async () => {
                     element.addEventListener('click',detail_page)
                 });
             }
-            
         })
         .catch((err) => {
             console.log(err);
@@ -128,10 +126,7 @@ const detail_page = (event) => {
     const pages = {
         'pages': target.id
     }
-    // 로컬스토리지(DB에 저장)
     localStorage.setItem("renderPage", JSON.stringify(pages));
-
-    // 다음 페이지 Render
     location.href = "detail.html";
 }
 
