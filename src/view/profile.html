@@ -59,22 +59,28 @@
             <section>
                 <form class="user-profile-form" action="{% url 'user:pf-edit' %}" enctype="multipart/form-data" method="post">
                     <h2>Profile</h2>
-                    <h3>My Avatar</h3>
-                        <img src="/src/assets/img/sample.png" alt="" class="user-avatar" />
-                    <div class="avatar_div">
-                        <label for="profile-avatar">이미지 변경하기</label>
-                        <input type="file" id="profile-avatar" name="avatarUrl" value="">
-                    </div>
-                    <div class="name_div">
-                        <label for="profile-name">닉네임</label>
-                        <input type="text" id="profile-name" name="nickname" value="닉네임">
-                    </div>
-                    <div class="aboutMe_div">
-                        <label for="profile-aboutMe">자기소개</label>
-                        <textarea id="profile-aboutMe"  name="aboutMe" type="text" rows="20">자기소개 입니다.</textarea>
+                    <div class="profile_info">
+                        <div class="profile_avatar">
+                            <h3>My Avatar</h3>
+                            <img src="/src/assets/img/sample.png" alt="" class="user-avatar" />
+                            <div class="avatar_div">
+                                <label for="profile-avatar">이미지 변경하기</label>
+                                <input type="file" id="profile-avatar" name="avatarUrl" value="">
+                            </div>
+                        </div>
+                        <div>
+                            <div class="name_div">
+                                <label for="profile-name">닉네임</label>
+                                <input type="text" id="profile-name" name="nickname" value="닉네임">
+                            </div>
+                            <div class="aboutMe_div">
+                                <label for="profile-aboutMe">자기소개</label>
+                                <textarea id="profile-aboutMe"  name="aboutMe" type="text" rows="20">자기소개 입니다.</textarea>
+                            </div>
+                        </div>
                     </div>
                     <input class="pf-save_btn" type="submit" value="저장">
-                    <a class="change-pw_btn" href="#">비밀번호 변경 하러가기</a>
+                    <!-- <a class="change-pw_btn" href="#">비밀번호 변경 하러가기</a> -->
                 </form>
             </section>
         </main>

@@ -16,8 +16,8 @@ section {
 	align-items: center;
 	margin-left: auto;
 	margin-right: auto;
-	padding-bottom: 7rem;
-	width: 30rem;
+	padding-bottom: 50px;
+	width: 1000px;
 }
 
 .user-profile-form h2 {
@@ -25,6 +25,19 @@ section {
 	font-weight: bold;
 	margin-bottom: 2rem;
 	color:  rgb(102, 162, 253);;
+}
+
+.profile_info {
+	display: flex;
+	flex-direction: row;
+}
+
+.profile_avatar {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	margin-right: 60px;
 }
 
 .user-profile-form h3 {
@@ -44,7 +57,6 @@ section {
 .aboutMe_div,
 .name_div,
 .avatar_div {
-	width: 90%;
 	display: flex;
 	flex-direction: column;
 }
@@ -57,16 +69,17 @@ section {
 }
 
 .user-profile-form input{
-	border: 1px solid black;
+	border: 1px solid rgb(189, 189, 189);
 	border-radius: 5px;
 	padding: 10px;
 	font-size: 16px;
 }
 
 .user-profile-form textarea {
-	height: 15rem;
+	height: 150px;
+	width: 400px;
 	resize: none;
-	border: 1px solid black;
+	border: 1px solid rgb(189, 189, 189);
 	border-radius: 5px;
 	padding: 10px;
 	font-size: 16px;
@@ -82,15 +95,15 @@ section {
 
 .pf-save_btn {
 	font-weight: bold;
-	margin-top: 2rem;
+	margin-top: 120px;
 	background: rgb(102, 162, 253);
 	color: white;
-	width: 90%;
+	width: 332px;
 	border: 1px solid black;
 }
 
 .change-pw_btn {
-	width: 410px;
+	width: 310px;
 	height: 21px;
 	padding: 10px;
 	font-size: 16px;
@@ -102,7 +115,7 @@ section {
 	text-align: center;
 	text-decoration: none;
 	line-height: 21px;
-	border: 1px solid black;
+	border: 1px solid rgb(189, 189, 189);
 	border-radius: 5px;
 }
 
