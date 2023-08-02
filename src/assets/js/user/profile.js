@@ -72,14 +72,15 @@ const previewImage = (event) => {
     if (file.size > 250000){
         alert('파일크기는 2.5MB 이내로 가능합니다.')
         event.target.value = ''
+    } else{
+        let reader = new FileReader();
+
+        reader.onload = function (event) {
+            $avatar_img.setAttribute("src", event.target.result);
+        };
+        reader.readAsDataURL(file);
     }
-
-    let reader = new FileReader();
-
-    reader.onload = function (event) {
-        $avatar_img.setAttribute("src", event.target.result);
-    };
-    reader.readAsDataURL(file);
+    
 };
 
 
