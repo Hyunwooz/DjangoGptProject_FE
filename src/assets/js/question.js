@@ -105,10 +105,7 @@ $form.addEventListener("submit", (e) => {
         newGender,
     });
 
-    // 로컬스토리지(DB에 저장)
     localStorage.setItem("gptSetting", JSON.stringify(gptSetting));
-
-    // 다음 페이지 Render
     location.href = "service.html";
 });
 

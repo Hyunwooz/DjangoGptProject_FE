@@ -30,7 +30,7 @@ const api_login = async (event) => {
             setCookie('access',data.token.access)
             setCookie('refresh',data.token.refresh)
             sessionStorage.setItem('user', JSON.stringify(data.user));
-            // home_link()
+            home_link()
         }
     })
     .catch((err) => {
@@ -80,7 +80,7 @@ const github_login_func = async() => {
                 setCookie('access',data.token.access)
                 setCookie('refresh',data.token.refresh)
                 sessionStorage.setItem('user', JSON.stringify(data.user));
-                // home_link()
+                home_link()
             }
         })
         .catch((err) => {
