@@ -26,7 +26,7 @@ const apiPost = async (data) => {
             } else {
                 alert('생성되었습니다.')
             }
-            location.href = "/DjangoGptProject_FE/src/view/mypage.html";
+            location.href = "/src/view/mypage.html";
         })
         .catch((err) => {
             console.log(err);

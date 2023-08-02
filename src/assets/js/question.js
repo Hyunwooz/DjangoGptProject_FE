@@ -106,7 +106,7 @@ $form.addEventListener("submit", (e) => {
     });
 
     localStorage.setItem("gptSetting", JSON.stringify(gptSetting));
-    location.href = "/DjangoGptProject_FE/src/view/service.html";
+    location.href = "/src/view/service.html";
 });
 
 const sidebar_goal = (event) => {

@@ -89,7 +89,7 @@ const github_login_func = async() => {
 }
 
 const home_link = () => {
-    location.href= '/DjangoGptProject_FE/index.html'
+    location.href= '/index.html'
 }
 
 // 로그인이 되있으면 홈으로

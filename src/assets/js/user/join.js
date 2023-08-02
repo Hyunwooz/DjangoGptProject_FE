@@ -30,7 +30,7 @@ const api_join = async (event) => {
             alert(data.email[0])
         } else {
             alert('회원가입을 축하합니다.')
-            location.href= '/DjangoGptProject_FE/src/view/login.html'
+            location.href= '/src/view/login.html'
         }
     })
     .catch((err) => {
@@ -42,7 +42,7 @@ const api_join = async (event) => {
 const is_logined = () => {
 
     if (sessionStorage.getItem('user')) {
-        location.href = '/DjangoGptProject_FE/index.html'
+        location.href = '/index.html'
     }
 }
 

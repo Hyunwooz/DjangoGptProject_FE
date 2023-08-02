@@ -21,7 +21,7 @@ const handleClickConnect = () => {
 
 // disconnect Btn 클릭시 이전 페이지로 Render되는 함수
 const handleClickDisconnect = () => {
-    location.href = "/DjangoGptProject_FE/src/view/question.html";
+    location.href = "/src/view/question.html";
 }
 
 $connectBtn.addEventListener("click", handleClickConnect);

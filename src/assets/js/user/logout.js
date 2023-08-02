@@ -4,7 +4,7 @@ const logout = (event) => {
     event.preventDefault()
     
     sessionStorage.removeItem('user');
-    location.href = '/DjangoGptProject_FE/index.html'
+    location.href = '/index.html'
 }
 
 $logout_btn.addEventListener('click',logout)

@@ -190,7 +190,7 @@ const chatDelete = async () => {
     })
         .then((res) => res.json())
         .then((res) => {
-            location.href = '/DjangoGptProject_FE/src/view/lounge.html'
+            location.href = '/src/view/lounge.html'
         })
         .catch((err) => {
             console.log(err);
@@ -366,7 +366,7 @@ const likeFunc = async () => {
             });
     } else {
         alert('로그인이 필요한 서비스입니다.')
-        location.href = '/DjangoGptProject_FE/src/view/login.html'
+        location.href = '/src/view/login.html'
     }
 
     

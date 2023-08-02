@@ -16,7 +16,7 @@ const profile_setting = () => {
     if (user_profile.avatarUrl != 'none'){
         $avatar_img.src = user_profile.avatarUrl
     } else {
-        $avatar_img.src = '/DjangoGptProject_FE/src/assets/img/sample_banner.png'
+        $avatar_img.src = '/src/assets/img/sample_banner.png'
     }
 }
 
@@ -54,7 +54,7 @@ const api_save = async (event) => {
             const user_session = JSON.parse(user)
             user_session.profile = data.profile
             sessionStorage.setItem('user', JSON.stringify(user_session));
-            location.href = '/DjangoGptProject_FE/index.html'
+            location.href = '/index.html'
         }
     })
     .catch((err) => {
