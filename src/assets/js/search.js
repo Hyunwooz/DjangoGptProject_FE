@@ -113,11 +113,16 @@ const article_div = (data) => {
     post_label.classList = 'post_label'
     avatar.className = 'lounge_owner_img'
 
-    if(data.owner.avatarUrl.includes('github')) {
-        avatar.src = data.owner.avatarUrl
+    if (data.owner.avatarUrl == 'none'){
+        avatar.src = '/src/assets/img/sample_banner.png'
     } else {
-        avatar.src = imgUrl + data.owner.avatarUrl
+        if(data.owner.avatarUrl.includes('github')) {
+            avatar.src = data.owner.avatarUrl
+        } else {
+            avatar.src = imgUrl + data.owner.avatarUrl
+        }
     }
+    
     
     writer.innerText = data.owner.name
 

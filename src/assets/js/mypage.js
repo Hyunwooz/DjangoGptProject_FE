@@ -17,7 +17,11 @@ const profile_setting = () => {
     $aboutMe.innerText = user_profile.aboutMe
 
     if (user_profile.avatarUrl != 'none'){
-        $avatar_img.src = 'http://43.200.64.24/media/'+user_profile.avatarUrl
+        if(user_profile.avatarUrl.includes('github')) {
+            $avatar_img.src = user_profile.avatarUrl
+        } else {
+            $avatar_img.src = 'http://43.200.64.24/media/'+user_profile.avatarUrl
+        }
     } else {
         $avatar_img.src = '/src/assets/img/sample_banner.png'
     }

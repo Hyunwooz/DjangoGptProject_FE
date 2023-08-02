@@ -66,6 +66,13 @@ const ChatLoad = async () => {
                 }
                 if( user.profile.avatarUrl != 'none'){
                     const comment_avatar = document.querySelector('.loginuser_avatar')
+
+                    if(user.profile.avatarUrl.includes('github')) {
+                        comment_avatar.src = user.profile.avatarUrl
+                    } else {
+                        comment_avatar.src = 'http://43.200.64.24/media/' + user.profile.avatarUrl
+                    }
+
                     comment_avatar.src = 'http://43.200.64.24/media/' + user.profile.avatarUrl
                 }
 
@@ -287,11 +294,17 @@ const commentRead = (data) => {
     li.id = data.id
     avatar.className = 'comment_writer_avatar';
     
-    if(data.owner.avatarUrl.includes('github')) {
-        avatar.src = data.owner.avatarUrl
+    
+    if (data.owner.avatarUrl == 'none'){
+        avatar.src = '/src/assets/img/sample_banner.png'
     } else {
-        avatar.src = 'http://43.200.64.24/media/' + data.owner.avatarUrl;
+        if(data.owner.avatarUrl.includes('github')) {
+            avatar.src = data.owner.avatarUrl
+        } else {
+            avatar.src = 'http://43.200.64.24/media/' + data.owner.avatarUrl;
+        }
     }
+    
     
     info_div.className = 'comment_writer_info'
     writer.className = 'comment_writer_name'
