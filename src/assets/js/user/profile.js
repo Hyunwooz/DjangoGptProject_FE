@@ -67,12 +67,19 @@ const api_save = async (event) => {
 }
 
 const previewImage = (event) => {
+    const file = event.target.files[0];
+
+    if (file.size > 250000){
+        alert('파일크기는 2.5MB 이내로 가능합니다.')
+        event.target.value = ''
+    }
+
     let reader = new FileReader();
 
     reader.onload = function (event) {
         $avatar_img.setAttribute("src", event.target.result);
     };
-    reader.readAsDataURL(event.target.files[0]);
+    reader.readAsDataURL(file);
 };
 
 
