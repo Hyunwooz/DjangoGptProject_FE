@@ -26,7 +26,6 @@ const api_login = async (event) => {
         if (data.non_field_errors) {
             alert(data.non_field_errors[0])
         } else {
-            console.log(data)
             setCookie('access',data.token.access)
             setCookie('refresh',data.token.refresh)
             sessionStorage.setItem('user', JSON.stringify(data.user));
