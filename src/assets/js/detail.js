@@ -103,7 +103,7 @@ const ChatLoad = async () => {
             if (res.profile.avatarUrl == 'none'){
                 author_profile.src = '/src/assets/img/sample_banner.png'
             } else {
-                if(res.writer.login_method != "github"){
+                if(res.profile.avatarUrl.includes('github')){
                     author_profile.src = 'http://43.200.64.24/media/' + res.profile.avatarUrl
                 } else {
                     author_profile.src = res.profile.avatarUrl
