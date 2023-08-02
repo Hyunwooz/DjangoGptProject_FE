@@ -170,7 +170,7 @@ const detail_page = (event) => {
     localStorage.setItem("renderPage", JSON.stringify(pages));
 
     // 다음 페이지 Render
-    location.href = "detail.html";
+    location.href = "/DjangoGptProject_FE/src/view/detail.html";
 }
 
 const recent_detail_page = (event) => {
@@ -183,7 +183,7 @@ const recent_detail_page = (event) => {
     localStorage.setItem("renderPage", JSON.stringify(pages));
 
     // 다음 페이지 Render
-    location.href = "detail.html";
+    location.href = "/DjangoGptProject_FE/src/view/detail.html";
 }
 
 const categry_search_page = (event) => {
@@ -197,7 +197,7 @@ const categry_search_page = (event) => {
     localStorage.setItem("search", JSON.stringify(search));
 
     // 다음 페이지 Render
-    location.href = "search.html";
+    location.href = "/DjangoGptProject_FE/src/view/search.html";
 }
 
 const title_search_page = (event) => {
@@ -213,7 +213,7 @@ const title_search_page = (event) => {
     localStorage.setItem("search", JSON.stringify(search));
 
     // 다음 페이지 Render
-    location.href = "search.html";
+    location.href = "/DjangoGptProject_FE/src/view/search.html";
 }
 
 $search__btn.addEventListener('click',title_search_page)

@@ -127,7 +127,7 @@ const detail_page = (event) => {
         'pages': target.id
     }
     localStorage.setItem("renderPage", JSON.stringify(pages));
-    location.href = "detail.html";
+    location.href = "/DjangoGptProject_FE/src/view/detail.html";
 }
 
 
