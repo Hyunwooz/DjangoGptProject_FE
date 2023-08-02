@@ -76,7 +76,6 @@ const github_login_func = async() => {
             if (data.non_field_errors) {
                 console.log(data.non_field_errors[0])
             } else {
-                console.log(data)
                 setCookie('access',data.token.access)
                 setCookie('refresh',data.token.refresh)
                 sessionStorage.setItem('user', JSON.stringify(data.user));
@@ -90,14 +89,14 @@ const github_login_func = async() => {
 }
 
 const home_link = () => {
-    location.href= '/index.html'
+    location.href= '/DjangoGptProject_FE/index.html'
 }
 
 // 로그인이 되있으면 홈으로
 const is_logined = () => {
 
     if (sessionStorage.getItem('user')) {
-        location.href = '/index.html'
+        home_link()
     }
 }
 
