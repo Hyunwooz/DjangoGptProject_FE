@@ -124,6 +124,11 @@ aside a {
     padding-left: 25px;
     padding-right: 25px;
     height: 56px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .post_advertisement h5 {
