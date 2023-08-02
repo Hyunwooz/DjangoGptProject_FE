@@ -258,7 +258,7 @@ section {
 }
 
 .progress_wrap {
-    min-height: 200px;
+    min-height: 50px;
     background-color:rgb(218, 237, 255);
     padding: 10px;
     border-radius: 5px;
