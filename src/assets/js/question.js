@@ -92,7 +92,6 @@ $form.addEventListener("submit", (e) => {
 
     // 각 질문에 대한 벨류값 가져오기
     const newKeyword = $keyword.value;
-    console.log($keyword.vlaue);
     const newAge = $age.value;
     const newGender = $gender.value;
 
@@ -112,3 +111,67 @@ $form.addEventListener("submit", (e) => {
     // 다음 페이지 Render
     location.href = "service.html";
 });
+
+const sidebar_goal = (event) => {
+    const goal = document.querySelector('.select_goal')
+    const text = goal.querySelector('.selected_q_anwser')
+
+    goal.classList = 'select_goal'
+    text.innerText = event.target.value.replace(/_/g, " ")
+}
+
+const sidebar_type = (event) => {
+    const goal = document.querySelector('.select_type')
+    const text = goal.querySelector('.selected_q_anwser')
+
+    goal.classList = 'select_type'
+    text.innerText = event.target.value.replace(/_/g, " ")
+}
+
+const sidebar_category = (event) => {
+    const goal = document.querySelector('.select_category')
+    const text = goal.querySelector('.selected_q_anwser')
+
+    goal.classList = 'select_category'
+    text.innerText = event.target.value.replace(/_/g, " ")
+}
+
+const sidebar_keyword = (event) => {
+    const goal = document.querySelector('.select_keyword')
+    const text = goal.querySelector('.selected_q_anwser')
+
+    goal.classList = 'select_keyword'
+    text.innerText = event.target.value.replace(/_/g, " ")
+}
+
+const sidebar_gender = (event) => {
+    const goal = document.querySelector('.select_target_gender')
+    const text = goal.querySelector('.selected_q_anwser')
+
+    goal.classList = 'select_target_gender'
+    text.innerText = event.target.value.replace(/_/g, " ")
+}
+
+const sidebar_age = (event) => {
+    const goal = document.querySelector('.select_target_age')
+    const text = goal.querySelector('.selected_q_anwser')
+
+    goal.classList = 'select_target_age'
+    text.innerText = event.target.value.replace(/_/g, " ")
+}
+
+[...$campaignGoal.querySelectorAll("input")].forEach((e) => {
+    e.addEventListener('click',sidebar_goal)
+});
+
+[...$campaignType.querySelectorAll("input")].forEach((e) => {
+    e.addEventListener('click',sidebar_type)
+});
+
+[...$category.querySelectorAll("input")].forEach((e) => {
+    e.addEventListener('click',sidebar_category)
+});
+
+$keyword.addEventListener('input',sidebar_keyword)
+$gender.addEventListener('change',sidebar_gender)
+$age.addEventListener('change',sidebar_age)

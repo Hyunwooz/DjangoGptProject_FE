@@ -16,7 +16,7 @@ const renderPage = JSON.parse(localStorage.getItem("renderPage"));
         
 // Django Server에서 Post Detail 가져온 후 DOM 생성
 const ChatLoad = async () => {
-    const url = `http://127.0.0.1:8000/chatbot/detail/`;
+    const url = `http://43.200.64.24/chatbot/detail/`;
 
     const result = await fetch(url, {
         method: "POST",
@@ -66,7 +66,7 @@ const ChatLoad = async () => {
                 }
                 if( user.profile.avatarUrl != 'none'){
                     const comment_avatar = document.querySelector('.loginuser_avatar')
-                    comment_avatar.src = user.profile.avatarUrl
+                    comment_avatar.src = 'http://43.200.64.24/media/' + user.profile.avatarUrl
                 }
 
                 if(like_obj[user.account.email] == 'like'){
@@ -97,7 +97,7 @@ const ChatLoad = async () => {
                 author_profile.src = '/src/assets/img/sample_banner.png'
             } else {
                 if(res.writer.login_method != "github"){
-                    author_profile.src = 'http://127.0.0.1:8000/media/' + res.profile.avatarUrl
+                    author_profile.src = 'http://43.200.64.24/media/' + res.profile.avatarUrl
                 } else {
                     author_profile.src = res.profile.avatarUrl
                 }
@@ -178,7 +178,7 @@ const create_a = (data) => {
 
 // chat 삭제
 const chatDelete = async () => {
-    const url = `http://127.0.0.1:8000/chatbot/delete/`;
+    const url = `http://43.200.64.24/chatbot/delete/`;
 
     const result = await fetch(url, {
         method: "POST",
@@ -199,7 +199,7 @@ const chatDelete = async () => {
 
 // chat 공개 설정
 const chatPublic = async () => {
-    const url = `http://127.0.0.1:8000/chatbot/public/`;
+    const url = `http://43.200.64.24/chatbot/public/`;
 
     const result = await fetch(url, {
         method: "POST",
@@ -220,7 +220,7 @@ const chatPublic = async () => {
 
 // chat 비공개 설정
 const chatPrivate = async () => {
-    const url = `http://127.0.0.1:8000/chatbot/private/`;
+    const url = `http://43.200.64.24/chatbot/private/`;
 
     const result = await fetch(url, {
         method: "POST",
@@ -244,7 +244,7 @@ const commentWrite = async (event) => {
 
     event.preventDefault()
 
-    const url = `http://127.0.0.1:8000/chatbot/comment/write/`;
+    const url = `http://43.200.64.24/chatbot/comment/write/`;
 
     const post_id = renderPage.pages
     const comments = $comment_input.querySelector('input')
@@ -290,7 +290,7 @@ const commentRead = (data) => {
     if(data.owner.avatarUrl.includes('github')) {
         avatar.src = data.owner.avatarUrl
     } else {
-        avatar.src = 'http://127.0.0.1:8000/media/' + data.owner.avatarUrl;
+        avatar.src = 'http://43.200.64.24/media/' + data.owner.avatarUrl;
     }
     
     info_div.className = 'comment_writer_info'
@@ -316,7 +316,7 @@ const commentRead = (data) => {
 const commentDelete = async (event) => {
     event.preventDefault()
 
-    const url = `http://127.0.0.1:8000/chatbot/comment/delete/`;
+    const url = `http://43.200.64.24/chatbot/comment/delete/`;
 
     let target = event.target
 
@@ -344,25 +344,32 @@ const commentDelete = async (event) => {
 
 // Like 좋아요!
 const likeFunc = async () => {
-    const access = getCookie('access')
-
-    const url = `http://127.0.0.1:8000/chatbot/like/`;
-    const result = await fetch(url, {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-            "Authorization": `Bearer ${access}`,
-        },
-        body: renderPage.pages,
-        redirect: "follow",
-    })
-        .then((res) => res.json())
-        .then((res) => {
-            location.reload()
+    
+    if (sessionStorage.getItem('user')) {
+        const access = getCookie('access')
+        const url = `http://43.200.64.24/chatbot/like/`;
+        const result = await fetch(url, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": `Bearer ${access}`,
+            },
+            body: renderPage.pages,
+            redirect: "follow",
         })
-        .catch((err) => {
-            console.log(err);
-        });
+            .then((res) => res.json())
+            .then((res) => {
+                location.reload()
+            })
+            .catch((err) => {
+                console.log(err);
+            });
+    } else {
+        alert('로그인이 필요한 서비스입니다.')
+        location.href = 'login.html'
+    }
+
+    
 };
 
 ChatLoad()

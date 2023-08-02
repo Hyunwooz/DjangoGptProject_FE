@@ -4,6 +4,13 @@ const $nextStep = document.querySelector('.nextStep')
 const $count = document.querySelector('.q_count_changing');
 const content_Els = document.querySelectorAll('section');
 
+const $campaignGoal = document.querySelector(".campaignGoal");
+const $campaignType = document.querySelector(".campaignType");
+const $category = document.querySelector(".campaignCategory");
+const $keyword = document.querySelector(".keyword_input");
+const $age = document.querySelector(".targetAge");
+const $gender = document.querySelector(".targetGender");
+
 // 슬라이드의 위치 기본값은 0
 let curr_index = 0;
 

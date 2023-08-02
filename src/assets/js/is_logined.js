@@ -11,7 +11,7 @@ const is_logined = () => {
         });
         
         if (profile.avatarUrl != "none"){
-            $avatar_img.src = profile.avatarUrl
+            $avatar_img.src = 'http://43.200.64.24/media/'+profile.avatarUrl
         } else {
             $avatar_img.src = '/src/assets/img/sample_banner.png'
         }

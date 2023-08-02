@@ -1,7 +1,7 @@
 const $post_wrap = document.querySelector('.post_wrap')
 
 // Django Server URL
-const url = `http://127.0.0.1:8000/chatbot/lounge/`;
+const url = `http://43.200.64.24/chatbot/lounge/`;
 const $search__btn = document.querySelector('.search__btn')
 
 // Django Server와 통신
@@ -102,7 +102,7 @@ const article_div = (data) => {
     const created_at = document.createElement('p')
     const views = document.createElement('p')
 
-    const imgUrl = 'http://127.0.0.1:8000/media/'
+    const imgUrl = 'http://43.200.64.24/media/'
 
     post_advertisement.classList = 'post_advertisement'
     post_advertisement.id = data.id

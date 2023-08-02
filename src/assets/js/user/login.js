@@ -14,7 +14,7 @@ const api_login = async (event) => {
     formData.append('email', email);
     formData.append('password', password);
 
-    const url = 'http://127.0.0.1:8000/user/login/'
+    const url = 'http://43.200.64.24/user/login/'
 
     await fetch(url, {
         method: "POST",
@@ -24,12 +24,13 @@ const api_login = async (event) => {
     .then((res) => res.json())
     .then((data) => {
         if (data.non_field_errors) {
-            console.log(data.non_field_errors[0])
+            alert(data.non_field_errors[0])
         } else {
+            console.log(data)
             setCookie('access',data.token.access)
             setCookie('refresh',data.token.refresh)
             sessionStorage.setItem('user', JSON.stringify(data.user));
-            home_link()
+            // home_link()
         }
     })
     .catch((err) => {
@@ -40,7 +41,7 @@ const api_login = async (event) => {
 const github_login = async (event) => {
     event.preventDefault()
     
-    const url = 'http://127.0.0.1:8000/user/login/github/'
+    const url = 'http://43.200.64.24/user/login/github/'
     
     await fetch(url, {
         method: "POST",
@@ -57,12 +58,10 @@ const github_login = async (event) => {
     });
 }
 
-
-
 const github_login_func = async() => {
     const urlParams = new URL(location.href).searchParams;
     const code = urlParams.get('code');
-    const url = 'http://127.0.0.1:8000/user/login/github/callback/'
+    const url = 'http://43.200.64.24/user/login/github/callback/'
 
     if(code) {
         await fetch(url, {
@@ -77,10 +76,11 @@ const github_login_func = async() => {
             if (data.non_field_errors) {
                 console.log(data.non_field_errors[0])
             } else {
+                console.log(data)
                 setCookie('access',data.token.access)
                 setCookie('refresh',data.token.refresh)
                 sessionStorage.setItem('user', JSON.stringify(data.user));
-                home_link()
+                // home_link()
             }
         })
         .catch((err) => {

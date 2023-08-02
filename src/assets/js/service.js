@@ -4,7 +4,7 @@ import { getCookie } from "./util.js";
 const $loading = document.querySelector("#loading");
 
 // API url
-const url = `http://127.0.0.1:8000/chatbot/`;
+const url = `http://43.200.64.24/chatbot/`;
 
 // api 요청보내는 함수
 const apiPost = async (data) => {
@@ -21,7 +21,11 @@ const apiPost = async (data) => {
     })
         .then((res) => res.json())
         .then((res) => {
-            alert('생성되었습니다.')
+            if (typeof res.message == "undefined"){
+                alert('일일 요청 횟수(5회)가 초과되었습니다.')
+            } else {
+                alert('생성되었습니다.')
+            }
             location.href = "mypage.html";
         })
         .catch((err) => {

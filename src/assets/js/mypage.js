@@ -7,7 +7,7 @@ const $ad_wrap = document.querySelector('.my_ad_wrap')
 
 
 // Django Server URL
-const url = `http://127.0.0.1:8000/chatbot/mylist/`;
+const url = `http://43.200.64.24/chatbot/mylist/`;
 
 const profile_setting = () => {
     let user = sessionStorage.getItem('user');
@@ -17,7 +17,7 @@ const profile_setting = () => {
     $aboutMe.innerText = user_profile.aboutMe
 
     if (user_profile.avatarUrl != 'none'){
-        $avatar_img.src = user_profile.avatarUrl
+        $avatar_img.src = 'http://43.200.64.24/media/'+user_profile.avatarUrl
     } else {
         $avatar_img.src = '/src/assets/img/sample_banner.png'
     }

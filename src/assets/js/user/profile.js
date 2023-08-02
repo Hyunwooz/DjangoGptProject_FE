@@ -37,7 +37,7 @@ const api_save = async (event) => {
     formData.append('aboutMe', aboutMe);
     
 
-    const url = 'http://127.0.0.1:8000/user/profile/'
+    const url = 'http://43.200.64.24/user/profile/'
     //refresh header "refresh": `Bearer ${refresh}`,
     await fetch(url, {
         method: "POST",
@@ -48,9 +48,8 @@ const api_save = async (event) => {
     })
     .then((res) => res.json())
     .then((data) => {
-        
         if (data) {
-            alert(data.message)
+            alert('프로필 변경이 완료되었습니다.')
             let user = sessionStorage.getItem('user');
             const user_session = JSON.parse(user)
             user_session.profile = data.profile
